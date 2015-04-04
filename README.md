@@ -9,7 +9,7 @@ Then, modify the library project's .properties: change **target=android-19** to 
 ## TODO: Implementation
 We can use DrawerLayout to define the leftmenu and main content region, and for different tasks, we can redefine their layout using "Fragment" (not "Activity"). 
 
-The MainActivity class have already defined the leftmenu as ListView and main content as FrameLayout. For different tasks, we need to re-implement their Fragment class and layout. The Fragments class and layout for each task have been added in the project and each team member only need to modify their assigned task.
+The MainActivity class have already defined the leftmenu as ListView and main content as FrameLayout. For different tasks, we need to re-implement their Fragment class and layout. The Fragments class and layout for each task have been added in the project and each team member only need to modify files corresponding to their assigned task.
 
 Below is the list of tasks with their corresponding class and layout:
 - *Acceuil*: AcceuilFragment + fragment_acceuil
