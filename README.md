@@ -17,3 +17,5 @@ Below is the list of tasks with their corresponding class and layout:
 - *Mes Invitations*: MesInvitationsFragment + fragment_mes_invitation
 - *Mes Notification*: MesNotificationsFragment + fragment_mes_notifications
 - *Mon Compte*: MonCompteFragment + fragment_mon_compte
+
+However, for Avanced Search task, we can make use Activity to implement it ( because it has multilple screen steps but i am not sure) so you should decide it by yourself! In MainActivity, the Advanced Search is in ActionBar of rightmenu and i have added "TODO" comment to mark the section of where you can put your Activity/Fragment call.
