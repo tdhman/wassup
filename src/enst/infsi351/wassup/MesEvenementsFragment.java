@@ -5,6 +5,7 @@ package enst.infsi351.wassup;
 import java.lang.ref.WeakReference;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -96,9 +97,14 @@ public class MesEvenementsFragment extends Fragment {
     	imageView.setOnClickListener(new OnClickListener(){
     		   @Override
     		   public void onClick(View v) {
-    		    Toast.makeText(getActivity(), 
-    		      "Clicked - " + imageId, 
-    		      Toast.LENGTH_LONG).show();
+    			   // TODO: Test Evenement view
+    			   Fragment fragment = new EvenementFragment();
+	   	           Bundle args = new Bundle();
+	   	           args.putInt(EvenementFragment.ARG_FRAGMENT_NUMBER, imageId);
+	   	           fragment.setArguments(args);
+	   	
+	   	           FragmentManager fragmentManager = getFragmentManager();
+	   	           fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
     		   }});
     	BitmapWorkerTask task = new BitmapWorkerTask(imageView);
     	task.execute(imageId);
@@ -120,9 +126,9 @@ public class MesEvenementsFragment extends Fragment {
     	btnLayout.setLayoutParams(LLParams);
     	
         LayoutParams btnParams = new LayoutParams(64,64);
-        Button favoriteBtn = new Button(getActivity());
+        /*Button favoriteBtn = new Button(getActivity());
         favoriteBtn.setLayoutParams(btnParams);
-        favoriteBtn.setBackgroundResource(R.drawable.add_to_favorites);
+        favoriteBtn.setBackgroundResource(R.drawable.heart_favorite);
         favoriteBtn.setOnClickListener(new OnClickListener() {			
 			@Override
 			public void onClick(View v) {
@@ -130,7 +136,7 @@ public class MesEvenementsFragment extends Fragment {
 		    		      "Enregistré aux mes évenements - " + imageId, 
 		    		      Toast.LENGTH_LONG).show();
 			}
-		});
+		});*/
         
         Button shareBtn = new Button(getActivity());
         shareBtn.setLayoutParams(btnParams);
@@ -144,11 +150,11 @@ public class MesEvenementsFragment extends Fragment {
 			}
 		});
         
-        btnLayout.addView(favoriteBtn);
-        btnLayout.addView(shareBtn);
+        //btnLayout.addView(favoriteBtn);
+        //btnLayout.addView(shareBtn);
         
         frameView.addView(imageView);
-        frameView.addView(btnLayout);
+        frameView.addView(shareBtn);
         
         layout.addView(frameView);
         layout.addView(infoView);

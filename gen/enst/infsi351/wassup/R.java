@@ -1655,16 +1655,17 @@ containing a value of this type.
         public static final int affiche_9=0x7f020042;
         public static final int drawer_shadow=0x7f020043;
         public static final int earth=0x7f020044;
-        public static final int ic_drawer=0x7f020045;
-        public static final int ic_launcher=0x7f020046;
-        public static final int info=0x7f020047;
-        public static final int jupiter=0x7f020048;
-        public static final int mars=0x7f020049;
-        public static final int mercury=0x7f02004a;
-        public static final int neptune=0x7f02004b;
-        public static final int saturn=0x7f02004c;
-        public static final int uranus=0x7f02004d;
-        public static final int venus=0x7f02004e;
+        public static final int heart_favorite=0x7f020045;
+        public static final int ic_drawer=0x7f020046;
+        public static final int ic_launcher=0x7f020047;
+        public static final int info=0x7f020048;
+        public static final int jupiter=0x7f020049;
+        public static final int mars=0x7f02004a;
+        public static final int mercury=0x7f02004b;
+        public static final int neptune=0x7f02004c;
+        public static final int saturn=0x7f02004d;
+        public static final int uranus=0x7f02004e;
+        public static final int venus=0x7f02004f;
     }
     public static final class id {
         public static final int action_bar=0x7f090031;
@@ -1680,8 +1681,9 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f09002e;
         public static final int action_mode_bar_stub=0x7f09002d;
         public static final int action_mode_close_button=0x7f090020;
-        public static final int action_search=0x7f090045;
+        public static final int action_search=0x7f090049;
         public static final int activity_chooser_view_content=0x7f090021;
+        public static final int afficheView=0x7f090043;
         public static final int always=0x7f090014;
         public static final int beginning=0x7f09001b;
         public static final int checkbox=0x7f090029;
@@ -1697,16 +1699,18 @@ containing a value of this type.
         public static final int end=0x7f09001c;
         public static final int expand_activities_button=0x7f090022;
         public static final int expanded_menu=0x7f090028;
-        public static final int gallery=0x7f090043;
+        public static final int favoriteBtn=0x7f090044;
+        public static final int gallery=0x7f090047;
         public static final int home=0x7f090000;
         public static final int homeAsUp=0x7f09000e;
         public static final int icon=0x7f090026;
         public static final int ifRoom=0x7f090016;
         public static final int image=0x7f090023;
+        public static final int infoView=0x7f090046;
         public static final int left_drawer=0x7f090041;
         public static final int listMode=0x7f09000a;
         public static final int list_item=0x7f090025;
-        public static final int menu_settings=0x7f090044;
+        public static final int menu_settings=0x7f090048;
         public static final int middle=0x7f09001d;
         public static final int never=0x7f090017;
         public static final int none=0x7f09000f;
@@ -1724,6 +1728,7 @@ containing a value of this type.
         public static final int search_plate=0x7f090039;
         public static final int search_src_text=0x7f09003a;
         public static final int search_voice_btn=0x7f09003e;
+        public static final int shareBtn=0x7f090045;
         public static final int shortcut=0x7f09002a;
         public static final int showCustom=0x7f090010;
         public static final int showHome=0x7f090011;
@@ -1793,11 +1798,12 @@ containing a value of this type.
         public static final int activity_main=0x7f030016;
         public static final int drawer_list_item=0x7f030017;
         public static final int fragment_acceuil=0x7f030018;
-        public static final int fragment_mes_evenements=0x7f030019;
-        public static final int fragment_mes_invitations=0x7f03001a;
-        public static final int fragment_mes_notifications=0x7f03001b;
-        public static final int fragment_mon_compte=0x7f03001c;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
+        public static final int fragment_evenement=0x7f030019;
+        public static final int fragment_mes_evenements=0x7f03001a;
+        public static final int fragment_mes_invitations=0x7f03001b;
+        public static final int fragment_mes_notifications=0x7f03001c;
+        public static final int fragment_mon_compte=0x7f03001d;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001e;
     }
     public static final class menu {
         public static final int activity_main=0x7f0d0000;
@@ -1862,9 +1868,10 @@ containing a value of this type.
         public static final int abc_toolbar_collapse_description=0x7f0a0004;
         public static final int action_search=0x7f0a0013;
         public static final int app_name=0x7f0a0010;
-        public static final int app_not_available=0x7f0a0016;
-        public static final int drawer_close=0x7f0a0015;
-        public static final int drawer_open=0x7f0a0014;
+        public static final int app_not_available=0x7f0a0017;
+        public static final int drawer_close=0x7f0a0016;
+        public static final int drawer_open=0x7f0a0015;
+        public static final int event=0x7f0a0014;
         public static final int menu_settings=0x7f0a0012;
         public static final int some_text=0x7f0a0011;
     }
