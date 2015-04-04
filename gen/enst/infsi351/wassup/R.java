@@ -1642,17 +1642,29 @@ containing a value of this type.
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020035;
         public static final int abc_textfield_search_material=0x7f020036;
         public static final int action_search=0x7f020037;
-        public static final int drawer_shadow=0x7f020038;
-        public static final int earth=0x7f020039;
-        public static final int ic_drawer=0x7f02003a;
-        public static final int ic_launcher=0x7f02003b;
-        public static final int jupiter=0x7f02003c;
-        public static final int mars=0x7f02003d;
-        public static final int mercury=0x7f02003e;
-        public static final int neptune=0x7f02003f;
-        public static final int saturn=0x7f020040;
-        public static final int uranus=0x7f020041;
-        public static final int venus=0x7f020042;
+        public static final int add_friends=0x7f020038;
+        public static final int add_to_favorites=0x7f020039;
+        public static final int affiche_1=0x7f02003a;
+        public static final int affiche_2=0x7f02003b;
+        public static final int affiche_3=0x7f02003c;
+        public static final int affiche_4=0x7f02003d;
+        public static final int affiche_5=0x7f02003e;
+        public static final int affiche_6=0x7f02003f;
+        public static final int affiche_7=0x7f020040;
+        public static final int affiche_8=0x7f020041;
+        public static final int affiche_9=0x7f020042;
+        public static final int drawer_shadow=0x7f020043;
+        public static final int earth=0x7f020044;
+        public static final int ic_drawer=0x7f020045;
+        public static final int ic_launcher=0x7f020046;
+        public static final int info=0x7f020047;
+        public static final int jupiter=0x7f020048;
+        public static final int mars=0x7f020049;
+        public static final int mercury=0x7f02004a;
+        public static final int neptune=0x7f02004b;
+        public static final int saturn=0x7f02004c;
+        public static final int uranus=0x7f02004d;
+        public static final int venus=0x7f02004e;
     }
     public static final class id {
         public static final int action_bar=0x7f090031;
@@ -1685,6 +1697,7 @@ containing a value of this type.
         public static final int end=0x7f09001c;
         public static final int expand_activities_button=0x7f090022;
         public static final int expanded_menu=0x7f090028;
+        public static final int gallery=0x7f090043;
         public static final int home=0x7f090000;
         public static final int homeAsUp=0x7f09000e;
         public static final int icon=0x7f090026;
@@ -1719,7 +1732,6 @@ containing a value of this type.
         public static final int submit_area=0x7f09003c;
         public static final int tabMode=0x7f09000c;
         public static final int textView1=0x7f090042;
-        public static final int textView2=0x7f090043;
         public static final int title=0x7f090027;
         public static final int up=0x7f090001;
         public static final int useLogo=0x7f090013;
@@ -1853,8 +1865,8 @@ containing a value of this type.
         public static final int app_not_available=0x7f0a0016;
         public static final int drawer_close=0x7f0a0015;
         public static final int drawer_open=0x7f0a0014;
-        public static final int hello_world=0x7f0a0011;
         public static final int menu_settings=0x7f0a0012;
+        public static final int some_text=0x7f0a0011;
     }
     public static final class style {
         public static final int Animation_AppCompat_DropDownUp=0x7f0b00cf;
@@ -3782,6 +3794,25 @@ containing a value of this type.
           @attr name enst.infsi351.wassup:preserveIconSpacing
         */
         public static final int MenuView_preserveIconSpacing = 7;
+        /** Attributes that can be used with a PicGallery.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #PicGallery_android_galleryItemBackground android:galleryItemBackground}</code></td><td></td></tr>
+           </table>
+           @see #PicGallery_android_galleryItemBackground
+         */
+        public static final int[] PicGallery = {
+            0x0101004c
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#galleryItemBackground}
+          attribute's value can be found in the {@link #PicGallery} array.
+          @attr name android:galleryItemBackground
+        */
+        public static final int PicGallery_android_galleryItemBackground = 0;
         /** Attributes that can be used with a PopupWindow.
            <p>Includes the following attributes:</p>
            <table>

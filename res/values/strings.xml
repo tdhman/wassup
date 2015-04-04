@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Wassup</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="some_text">Hello world!</string>
     <string name="menu_settings">Settings</string>
     
     <string-array name="menu_array">
