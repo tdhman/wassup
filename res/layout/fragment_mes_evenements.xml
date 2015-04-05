@@ -6,5 +6,6 @@
 		android:id="@+id/gallery"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
+		android:background="@color/white_bg"
 		android:orientation="horizontal"/> 
 </HorizontalScrollView> 
