@@ -1382,19 +1382,19 @@ containing a value of this type.
         public static final int abc_config_showMenuShortcutsWhenKeyboardPresent=0x7f050003;
     }
     public static final class color {
-        public static final int abc_background_cache_hint_selector_material_dark=0x7f060037;
-        public static final int abc_background_cache_hint_selector_material_light=0x7f060038;
+        public static final int abc_background_cache_hint_selector_material_dark=0x7f060038;
+        public static final int abc_background_cache_hint_selector_material_light=0x7f060039;
         public static final int abc_input_method_navigation_guard=0x7f060003;
-        public static final int abc_primary_text_disable_only_material_dark=0x7f060039;
-        public static final int abc_primary_text_disable_only_material_light=0x7f06003a;
-        public static final int abc_primary_text_material_dark=0x7f06003b;
-        public static final int abc_primary_text_material_light=0x7f06003c;
-        public static final int abc_search_url_text=0x7f06003d;
+        public static final int abc_primary_text_disable_only_material_dark=0x7f06003a;
+        public static final int abc_primary_text_disable_only_material_light=0x7f06003b;
+        public static final int abc_primary_text_material_dark=0x7f06003c;
+        public static final int abc_primary_text_material_light=0x7f06003d;
+        public static final int abc_search_url_text=0x7f06003e;
         public static final int abc_search_url_text_normal=0x7f060000;
         public static final int abc_search_url_text_pressed=0x7f060002;
         public static final int abc_search_url_text_selected=0x7f060001;
-        public static final int abc_secondary_text_material_dark=0x7f06003e;
-        public static final int abc_secondary_text_material_light=0x7f06003f;
+        public static final int abc_secondary_text_material_dark=0x7f06003f;
+        public static final int abc_secondary_text_material_light=0x7f060040;
         public static final int accent_material_dark=0x7f06000f;
         public static final int accent_material_light=0x7f06000e;
         public static final int background_floating_material_dark=0x7f060006;
@@ -1419,6 +1419,7 @@ containing a value of this type.
         public static final int dim_foreground_material_dark=0x7f06001a;
         public static final int dim_foreground_material_light=0x7f06001b;
         public static final int foursquare_blue=0x7f060034;
+        public static final int gray=0x7f060037;
         /**  TODO: This is 40% alpha on the default accent color. 
          */
         public static final int highlighted_text_material_dark=0x7f060020;
@@ -1660,21 +1661,24 @@ containing a value of this type.
         public static final int affiche_7=0x7f020040;
         public static final int affiche_8=0x7f020041;
         public static final int affiche_9=0x7f020042;
-        public static final int drawer_shadow=0x7f020043;
-        public static final int dropshadow=0x7f020044;
-        public static final int earth=0x7f020045;
-        public static final int heart_favorite=0x7f020046;
-        public static final int ic_drawer=0x7f020047;
-        public static final int ic_launcher=0x7f020048;
-        public static final int info=0x7f020049;
-        public static final int jupiter=0x7f02004a;
-        public static final int mars=0x7f02004b;
-        public static final int mercury=0x7f02004c;
-        public static final int neptune=0x7f02004d;
-        public static final int saturn=0x7f02004e;
-        public static final int table_cell=0x7f02004f;
-        public static final int uranus=0x7f020050;
-        public static final int venus=0x7f020051;
+        public static final int bim_avatar=0x7f020043;
+        public static final int book_avatar=0x7f020044;
+        public static final int bookshelf=0x7f020045;
+        public static final int drawer_shadow=0x7f020046;
+        public static final int dropshadow=0x7f020047;
+        public static final int example_avatar=0x7f020048;
+        public static final int facebook_avatar=0x7f020049;
+        public static final int growth_avatar=0x7f02004a;
+        public static final int heart_favorite=0x7f02004b;
+        public static final int ic_drawer=0x7f02004c;
+        public static final int ic_launcher=0x7f02004d;
+        public static final int idea_avatar=0x7f02004e;
+        public static final int info=0x7f02004f;
+        public static final int messi_avatar=0x7f020050;
+        public static final int penguin_avatar=0x7f020051;
+        public static final int robot_avatar=0x7f020052;
+        public static final int smile_avatar=0x7f020053;
+        public static final int table_cell=0x7f020054;
     }
     public static final class id {
         public static final int action_bar=0x7f090031;
@@ -1885,21 +1889,22 @@ containing a value of this type.
         /**  Content description for the Toolbar icon used to collapse an expanded action mode. [CHAR LIMIT=NONE] 
          */
         public static final int abc_toolbar_collapse_description=0x7f0a0004;
-        public static final int action_filter=0x7f0a001c;
-        public static final int action_search=0x7f0a001b;
-        public static final int answer_friend=0x7f0a0018;
-        public static final int answer_yes=0x7f0a0017;
+        public static final int action_filter=0x7f0a001d;
+        public static final int action_search=0x7f0a001c;
+        public static final int answer_friend=0x7f0a0019;
+        public static final int answer_yes=0x7f0a0018;
         public static final int app_name=0x7f0a0010;
-        public static final int app_not_available=0x7f0a0020;
+        public static final int app_not_available=0x7f0a0021;
         public static final int date=0x7f0a0015;
-        public static final int description=0x7f0a001a;
-        public static final int drawer_close=0x7f0a001f;
-        public static final int drawer_open=0x7f0a001e;
-        public static final int event=0x7f0a001d;
-        public static final int info=0x7f0a0019;
+        public static final int description=0x7f0a001b;
+        public static final int drawer_close=0x7f0a0020;
+        public static final int drawer_open=0x7f0a001f;
+        public static final int event=0x7f0a001e;
+        public static final int friends=0x7f0a0016;
+        public static final int info=0x7f0a001a;
         public static final int location=0x7f0a0014;
         public static final int menu_settings=0x7f0a0012;
-        public static final int question=0x7f0a0016;
+        public static final int question=0x7f0a0017;
         public static final int some_text=0x7f0a0011;
         public static final int title=0x7f0a0013;
     }

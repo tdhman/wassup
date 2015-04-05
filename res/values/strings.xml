@@ -7,6 +7,7 @@
     <string name="title">Titre du évènement</string>
     <string name="location">Location</string>
     <string name="date">Date</string>
+    <string name="friends">Participants</string>
     <string name="question">Voulez-vous y participer?</string>
     <string name="answer_yes">Participez-vous</string>
     <string name="answer_friend">Proposez aux amis</string>
