@@ -34,8 +34,7 @@
 	</style>
 	<style name="MyActionBar.PopupMenu" parent="@android:style/Widget.Holo.Light.PopupMenu">
         <item name="android:popupBackground">@color/white_bg</item>
-        <!-- Support library compatibility -->
-        <item name="background">@color/white_bg</item>
+        <item name="android:dropDownSelector">@color/twitter_blue</item>
     </style>
 
 </resources>
