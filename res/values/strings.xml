@@ -4,6 +4,14 @@
     <string name="app_name">Wassup</string>
     <string name="some_text">Hello world!</string>
     <string name="menu_settings">Settings</string>
+    <string name="title">Titre du évènement</string>
+    <string name="location">Location</string>
+    <string name="date">Date</string>
+    <string name="question">Voulez-vous y participer?</string>
+    <string name="answer_yes">Participez-vous</string>
+    <string name="answer_friend">Proposez aux amis</string>
+    <string name="info">Info pratique</string>
+    <string name="description">\n- Pour cette évenement, vous pouvez&#8230;\n- Quelques lignes de description, etc.</string>
     
     <string-array name="menu_array">
         <item>Acceuil</item>

@@ -19,6 +19,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -94,6 +95,7 @@ public class MesEvenementsFragment extends Fragment {
     
     public View addEvenementView(final int imageId){
     	ImageView imageView = new ImageView(getActivity());
+    	imageView.setScaleType(ScaleType.FIT_START);
     	imageView.setOnClickListener(new OnClickListener(){
     		   @Override
     		   public void onClick(View v) {
@@ -121,23 +123,8 @@ public class MesEvenementsFragment extends Fragment {
         
         FrameLayout frameView = new FrameLayout(getActivity());
         
-        LinearLayout btnLayout = new LinearLayout(getActivity());
-    	btnLayout.setOrientation(LinearLayout.VERTICAL);
-    	btnLayout.setLayoutParams(LLParams);
     	
-        LayoutParams btnParams = new LayoutParams(64,64);
-        /*Button favoriteBtn = new Button(getActivity());
-        favoriteBtn.setLayoutParams(btnParams);
-        favoriteBtn.setBackgroundResource(R.drawable.heart_favorite);
-        favoriteBtn.setOnClickListener(new OnClickListener() {			
-			@Override
-			public void onClick(View v) {
-				Toast.makeText(getActivity(), 
-		    		      "Enregistré aux mes évenements - " + imageId, 
-		    		      Toast.LENGTH_LONG).show();
-			}
-		});*/
-        
+        LayoutParams btnParams = new LayoutParams(64,64);       
         Button shareBtn = new Button(getActivity());
         shareBtn.setLayoutParams(btnParams);
         shareBtn.setBackgroundResource(R.drawable.add_friends);
@@ -149,9 +136,6 @@ public class MesEvenementsFragment extends Fragment {
 		    		      Toast.LENGTH_LONG).show();
 			}
 		});
-        
-        //btnLayout.addView(favoriteBtn);
-        //btnLayout.addView(shareBtn);
         
         frameView.addView(imageView);
         frameView.addView(shareBtn);
