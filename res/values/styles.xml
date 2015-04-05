@@ -17,6 +17,8 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="android:actionBarStyle">@style/MyActionBar</item>
         <item name="android:popupMenuStyle">@style/MyActionBar.PopupMenu</item>
+        <item name="android:textViewStyle">@style/TextViewStyle</item>
+    	<item name="android:buttonStyle">@style/ButtonStyle</item>
         <!-- Support library compatibility -->
         <item name="actionBarStyle">@style/MyActionBar</item>
         <item name="popupMenuStyle">@style/MyActionBar.PopupMenu</item>
@@ -36,5 +38,14 @@
         <item name="android:popupBackground">@color/white_bg</item>
         <item name="android:dropDownSelector">@color/twitter_blue</item>
     </style>
+    
+	<!-- Font styles -->
+	<style name="TextViewStyle" parent="@android:style/Widget.TextView">
+   		<item name="android:fontFamily">sans-serif-light</item>
+	</style>
+
+	<style name="ButtonStyle" parent="@android:style/Widget.Holo.Button">
+    	<item name="android:fontFamily">sans-serif-light</item>
+	</style>
 
 </resources>

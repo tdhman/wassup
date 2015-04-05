@@ -4,5 +4,8 @@
     <color name="white_bg">#ffffff</color> 
     <color name="twitter_blue">#00aced</color>
     <color name="foursquare_blue">#0072b1</color>
+    <color name="vimeo_blue">#45bbff</color>
+    <color name="vimeo_light_blue">#d1eef7</color>
+    <color name="gray">#bdbdbd</color>
     
 </resources>

@@ -159,7 +159,7 @@ public class MainActivity extends ActionBarActivity {
 	            fragment.setArguments(args);
 	
 	            FragmentManager fragmentManager = getFragmentManager();
-	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("acceuil").commit();
 	    		break;
 	    	}
 	    	case 1:
@@ -170,7 +170,7 @@ public class MainActivity extends ActionBarActivity {
 	            fragment.setArguments(args);
 	
 	            FragmentManager fragmentManager = getFragmentManager();
-	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("evenements").commit();
 	    		break;
 	    	}
 	    	case 2:
@@ -181,7 +181,7 @@ public class MainActivity extends ActionBarActivity {
 	            fragment.setArguments(args);
 	
 	            FragmentManager fragmentManager = getFragmentManager();
-	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("invitations").commit();
 	    		break;
 	    	}
 	    	case 3:
@@ -192,7 +192,7 @@ public class MainActivity extends ActionBarActivity {
 	            fragment.setArguments(args);
 	
 	            FragmentManager fragmentManager = getFragmentManager();
-	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("notifications").commit();
 	    		break;
 	    	}
 	    	case 4:
@@ -203,7 +203,7 @@ public class MainActivity extends ActionBarActivity {
 	            fragment.setArguments(args);
 	
 	            FragmentManager fragmentManager = getFragmentManager();
-	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("compte").commit();
 	    		break;
 	    	}
 	    	case 5: case 6: case 7: // Aide, déconnexion, à propos

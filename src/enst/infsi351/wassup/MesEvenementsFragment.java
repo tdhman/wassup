@@ -3,14 +3,17 @@ package enst.infsi351.wassup;
 //import com.squareup.picasso.Picasso;
 
 import java.lang.ref.WeakReference;
+import java.util.Random;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -19,7 +22,11 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -31,6 +38,12 @@ public class MesEvenementsFragment extends Fragment {
             R.drawable.affiche_1, R.drawable.affiche_2, R.drawable.affiche_3,
             R.drawable.affiche_4, R.drawable.affiche_5, R.drawable.affiche_6,
             R.drawable.affiche_7, R.drawable.affiche_8, R.drawable.affiche_9};
+    
+ // A static dataset 
+    public final static Integer[] avaResIds = new Integer[] {
+            R.drawable.example_avatar, R.drawable.facebook_avatar, R.drawable.messi_avatar,
+            R.drawable.robot_avatar, R.drawable.book_avatar, R.drawable.idea_avatar,
+            R.drawable.bim_avatar, R.drawable.growth_avatar, R.drawable.penguin_avatar, R.drawable.smile_avatar};
 	
 	private LinearLayout gallery;
 
@@ -93,7 +106,10 @@ public class MesEvenementsFragment extends Fragment {
     }
     
     public View addEvenementView(final int imageId){
+    	//LinearLayout.LayoutParams imageParams = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
     	ImageView imageView = new ImageView(getActivity());
+    	imageView.setScaleType(ScaleType.CENTER_CROP);
+    	//imageView.setLayoutParams(imageParams);
     	imageView.setOnClickListener(new OnClickListener(){
     		   @Override
     		   public void onClick(View v) {
@@ -109,35 +125,68 @@ public class MesEvenementsFragment extends Fragment {
     	BitmapWorkerTask task = new BitmapWorkerTask(imageView);
     	task.execute(imageId);
     	
-    	ImageView infoView = new ImageView(getActivity());
-    	infoView.setBackgroundResource(R.drawable.info);
+    	TableLayout infoView = new TableLayout(getActivity());
+    	infoView.setBackgroundColor(Color.WHITE);
+    	infoView.setStretchAllColumns(true);
+    	TableRow row1 = new TableRow(getActivity());
+    	row1.setPadding(5, 10, 0, 0);
+    	TextView locationText = new TextView(getActivity());
+    	locationText.setTextSize(24);
+    	locationText.setText(R.string.location);
+    	TextView dateText = new TextView(getActivity());
+    	dateText.setTextSize(24);
+    	dateText.setText(R.string.date);
+    	row1.addView(locationText);
+    	row1.addView(dateText);
+    	TableRow row2 = new TableRow(getActivity());
+    	row2.setPadding(5, 10, 0, 0);
+    	TextView someText1 = new TextView(getActivity());
+    	someText1.setMaxLines(4);
+    	someText1.setText(R.string.some_text);
+    	TextView someText2 = new TextView(getActivity());
+    	someText2.setText(R.string.some_text);
+    	someText2.setMaxLines(4);
+    	row2.addView(someText1);
+    	row2.addView(someText2);
+    	TableRow row3 = new TableRow(getActivity());
+    	row3.setPadding(5, 10, 0, 0);
+    	TextView someText3 = new TextView(getActivity());
+    	someText3.setTextSize(24);
+    	someText3.setText(R.string.friends);
+    	row3.addView(someText3);
+    	infoView.addView(row1);
+    	infoView.addView(row2);
+    	infoView.addView(row3);
+    	
+    	LinearLayout layoutListFriend = new LinearLayout(getActivity());
+    	LinearLayout.LayoutParams listParams = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+    	listParams.setMargins(24, 0, 24, 0);
+    	layoutListFriend.setLayoutParams(listParams);
+    	LinearLayout.LayoutParams imageParams = new LinearLayout.LayoutParams(100, 100);
+    	imageParams.setMargins(10, 0, 10, 0);
+    	Random r = new Random();
+    	for(int i=0; i<4; i++){
+    		ImageView avatarView = new ImageView(getActivity());
+    		avatarView.setScaleType(ScaleType.CENTER);
+    		avatarView.setAdjustViewBounds(true);
+    		avatarView.setLayoutParams(imageParams);
+    		int i1 = r.nextInt(9 - 0 + 1) + 0; // range 0-9
+    		avatarView.setBackgroundResource(avaResIds[i1]);
+    		layoutListFriend.addView(avatarView);
+    	}
+    	
     	
     	LinearLayout layout = new LinearLayout(getActivity());
-    	layout.setOrientation(LinearLayout.VERTICAL);
-    	
     	LayoutParams LLParams = new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
-        layout.setWeightSum(6f);
         layout.setLayoutParams(LLParams);
+        layout.setOrientation(LinearLayout.VERTICAL);
         
-        FrameLayout frameView = new FrameLayout(getActivity());
-        
-        LinearLayout btnLayout = new LinearLayout(getActivity());
-    	btnLayout.setOrientation(LinearLayout.VERTICAL);
-    	btnLayout.setLayoutParams(LLParams);
+        FrameLayout frameView = new FrameLayout(getActivity());   
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+        frameView.setLayoutParams(new LayoutParams(displaymetrics.widthPixels, displaymetrics.heightPixels/2));
     	
-        LayoutParams btnParams = new LayoutParams(64,64);
-        /*Button favoriteBtn = new Button(getActivity());
-        favoriteBtn.setLayoutParams(btnParams);
-        favoriteBtn.setBackgroundResource(R.drawable.heart_favorite);
-        favoriteBtn.setOnClickListener(new OnClickListener() {			
-			@Override
-			public void onClick(View v) {
-				Toast.makeText(getActivity(), 
-		    		      "Enregistré aux mes évenements - " + imageId, 
-		    		      Toast.LENGTH_LONG).show();
-			}
-		});*/
-        
+        LayoutParams btnParams = new LayoutParams(64,64);       
         Button shareBtn = new Button(getActivity());
         shareBtn.setLayoutParams(btnParams);
         shareBtn.setBackgroundResource(R.drawable.add_friends);
@@ -150,14 +199,12 @@ public class MesEvenementsFragment extends Fragment {
 			}
 		});
         
-        //btnLayout.addView(favoriteBtn);
-        //btnLayout.addView(shareBtn);
-        
         frameView.addView(imageView);
         frameView.addView(shareBtn);
         
         layout.addView(frameView);
         layout.addView(infoView);
+        layout.addView(layoutListFriend);
     	
     	return layout;
     }
