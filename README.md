@@ -25,5 +25,5 @@ However, for Avanced Search task, we can use Activity to implement it ( because 
 - *Evenement*: EvenementFragment + fragment_evenement
 
 ## Screenshots
-![Mes Evenements](https://github.com/tdhman/wassup/blob/master/Screenshots/Mes%20Evenements.png "Mes Evenements")
-![Evenement](https://github.com/tdhman/wassup/blob/master/Screenshots/Evenement.png "Evenement")
+![Mes Evenements](https://github.com/tdhman/wassup/blob/master/Screenshots/evenement.jpg "Mes Evenements")
+![Evenement](https://github.com/tdhman/wassup/blob/master/Screenshots/mes_evenements.jpg "Evenement")
