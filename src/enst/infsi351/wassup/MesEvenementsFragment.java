@@ -1,36 +1,17 @@
 package enst.infsi351.wassup;
 
-//import com.squareup.picasso.Picasso;
-
-import java.lang.ref.WeakReference;
-import java.util.Random;
-
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
-import android.widget.LinearLayout;
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.NavUtils;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBarActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 
-public class MesEvenementsFragment extends Fragment {
+public class MesEvenementsFragment extends ActionBarActivity {
 	public static final String ARG_FRAGMENT_NUMBER = "evenements_number";
 	
 	// A static dataset 
@@ -38,20 +19,83 @@ public class MesEvenementsFragment extends Fragment {
             R.drawable.affiche_1, R.drawable.affiche_2, R.drawable.affiche_3,
             R.drawable.affiche_4, R.drawable.affiche_5, R.drawable.affiche_6,
             R.drawable.affiche_7, R.drawable.affiche_8, R.drawable.affiche_9};
-    
- // A static dataset 
-    public final static Integer[] avaResIds = new Integer[] {
-            R.drawable.example_avatar, R.drawable.facebook_avatar, R.drawable.messi_avatar,
-            R.drawable.robot_avatar, R.drawable.book_avatar, R.drawable.idea_avatar,
-            R.drawable.bim_avatar, R.drawable.growth_avatar, R.drawable.penguin_avatar, R.drawable.smile_avatar};
 	
-	private LinearLayout gallery;
+	//private LinearLayout gallery;
+	private ViewPager mPager;
+	private static final int NUM_PAGES = 9;
+	private PagerAdapter mPagerAdapter;
+	
 
     public MesEvenementsFragment() {
         // Empty constructor required for fragment subclasses
     }
+    
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_screen_slide);
+
+
+        // enable ActionBar app icon to behave as action to toggle nav drawer
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+
+        // Instantiate a ViewPager and a PagerAdapter.
+        mPager = (ViewPager) findViewById(R.id.pager);
+        mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
+        mPager.setAdapter(mPagerAdapter);
+    }
 
     @Override
+    public void onBackPressed() {
+        if (mPager.getCurrentItem() == 0) {
+            // If the user is currently looking at the first step, allow the system to handle the
+            // Back button. This calls finish() on this activity and pops the back stack.
+            super.onBackPressed();
+        } else {
+            // Otherwise, select the previous step.
+            mPager.setCurrentItem(mPager.getCurrentItem() - 1);
+        }
+    }
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    
+    /* Called whenever we call invalidateOptionsMenu() */
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        // If the nav drawer is open, hide action items related to the content view
+        return super.onPrepareOptionsMenu(menu);
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action buttons
+        switch(item.getItemId()) {
+        case R.id.action_search:
+            /** TODO:
+             * Add new activity for advanced search here!
+             */
+            return true;
+        case android.R.id.home: {
+            NavUtils.navigateUpFromSameTask(this);
+            return true;
+        }
+        default:
+            return super.onOptionsItemSelected(item);
+        }
+    }
+    
+    /**
+     * When using the ActionBarDrawerToggle, you must call it during
+     * onPostCreate() and onConfigurationChanged()...
+     */
+
+    /*@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_mes_evenements, container, false);
@@ -65,47 +109,47 @@ public class MesEvenementsFragment extends Fragment {
         }
         
         return rootView;
-    }
+    }*/
     
-    public static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
-	    // Raw height and width of image
-	    final int height = options.outHeight;
-	    final int width = options.outWidth;
-	    int inSampleSize = 1;
-	
-	    if (height > reqHeight || width > reqWidth) {
-	
-	        final int halfHeight = height / 2;
-	        final int halfWidth = width / 2;
-	
-	        // Calculate the largest inSampleSize value that is a power of 2 and keeps both
-	        // height and width larger than the requested height and width.
-	        while ((halfHeight / inSampleSize) > reqHeight
-	                && (halfWidth / inSampleSize) > reqWidth) {
-	            inSampleSize *= 2;
-	        }
-	    }
-	
-	    return inSampleSize;
-    }
+//    public static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
+//	    // Raw height and width of image
+//	    final int height = options.outHeight;
+//	    final int width = options.outWidth;
+//	    int inSampleSize = 1;
+//	
+//	    if (height > reqHeight || width > reqWidth) {
+//	
+//	        final int halfHeight = height / 2;
+//	        final int halfWidth = width / 2;
+//	
+//	        // Calculate the largest inSampleSize value that is a power of 2 and keeps both
+//	        // height and width larger than the requested height and width.
+//	        while ((halfHeight / inSampleSize) > reqHeight
+//	                && (halfWidth / inSampleSize) > reqWidth) {
+//	            inSampleSize *= 2;
+//	        }
+//	    }
+//	
+//	    return inSampleSize;
+//    }
+//    
+//    public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
+//            int reqWidth, int reqHeight) {
+//
+//        // First decode with inJustDecodeBounds=true to check dimensions
+//        final BitmapFactory.Options options = new BitmapFactory.Options();
+//        options.inJustDecodeBounds = true;
+//        BitmapFactory.decodeResource(res, resId, options);
+//
+//        // Calculate inSampleSize
+//        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+//
+//        // Decode bitmap with inSampleSize set
+//        options.inJustDecodeBounds = false;
+//        return BitmapFactory.decodeResource(res, resId, options);
+//    }
     
-    public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
-            int reqWidth, int reqHeight) {
-
-        // First decode with inJustDecodeBounds=true to check dimensions
-        final BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;
-        BitmapFactory.decodeResource(res, resId, options);
-
-        // Calculate inSampleSize
-        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
-
-        // Decode bitmap with inSampleSize set
-        options.inJustDecodeBounds = false;
-        return BitmapFactory.decodeResource(res, resId, options);
-    }
-    
-    public View addEvenementView(final int imageId){
+    /*public View addEvenementView(final int imageId){
     	//LinearLayout.LayoutParams imageParams = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
     	ImageView imageView = new ImageView(getActivity());
     	imageView.setScaleType(ScaleType.CENTER_CROP);
@@ -142,9 +186,9 @@ public class MesEvenementsFragment extends Fragment {
     	row2.setPadding(5, 10, 0, 0);
     	TextView someText1 = new TextView(getActivity());
     	someText1.setMaxLines(4);
-    	someText1.setText(R.string.some_text);
+    	someText1.setText(R.string.location_example);
     	TextView someText2 = new TextView(getActivity());
-    	someText2.setText(R.string.some_text);
+    	someText2.setText(R.string.date_example);
     	someText2.setMaxLines(4);
     	row2.addView(someText1);
     	row2.addView(someText2);
@@ -207,33 +251,53 @@ public class MesEvenementsFragment extends Fragment {
         layout.addView(layoutListFriend);
     	
     	return layout;
-    }
+    }*/
     
-    class BitmapWorkerTask extends AsyncTask<Integer, Void, Bitmap> {
-        private final WeakReference<ImageView> imageViewReference;
-        private int data = 0;
-
-        public BitmapWorkerTask(ImageView imageView) {
-            // Use a WeakReference to ensure the ImageView can be garbage collected
-            imageViewReference = new WeakReference<ImageView>(imageView);
+//    class BitmapWorkerTask extends AsyncTask<Integer, Void, Bitmap> {
+//        private final WeakReference<ImageView> imageViewReference;
+//        private int data = 0;
+//
+//        public BitmapWorkerTask(ImageView imageView) {
+//            // Use a WeakReference to ensure the ImageView can be garbage collected
+//            imageViewReference = new WeakReference<ImageView>(imageView);
+//        }
+//
+//        // Decode image in background.
+//        @Override
+//        protected Bitmap doInBackground(Integer... params) {
+//            data = params[0];
+//            return decodeSampledBitmapFromResource(getResources(), data, 250, 250);
+//        }
+//
+//        // Once complete, see if ImageView is still around and set bitmap.
+//        @Override
+//        protected void onPostExecute(Bitmap bitmap) {
+//            if (imageViewReference != null && bitmap != null) {
+//                final ImageView imageView = imageViewReference.get();
+//                if (imageView != null) {
+//                    imageView.setImageBitmap(bitmap);
+//                }
+//            }
+//        }
+//    }
+    
+    /**
+     * A simple pager adapter that represents ScreenSlidePageFragment objects, in
+     * sequence.
+     */
+    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
+        public ScreenSlidePagerAdapter(android.support.v4.app.FragmentManager fm) {
+            super(fm);
         }
 
-        // Decode image in background.
         @Override
-        protected Bitmap doInBackground(Integer... params) {
-            data = params[0];
-            return decodeSampledBitmapFromResource(getResources(), data, 250, 250);
+        public android.support.v4.app.Fragment getItem(int position) {
+        	return ScreenSlidePageFragment.newInstance(position);
         }
 
-        // Once complete, see if ImageView is still around and set bitmap.
         @Override
-        protected void onPostExecute(Bitmap bitmap) {
-            if (imageViewReference != null && bitmap != null) {
-                final ImageView imageView = imageViewReference.get();
-                if (imageView != null) {
-                    imageView.setImageBitmap(bitmap);
-                }
-            }
+        public int getCount() {
+            return NUM_PAGES;
         }
     }
 }

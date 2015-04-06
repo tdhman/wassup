@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:background="@color/white_bg"
+	    android:orientation="vertical" >
+	    
+        <FrameLayout
+        android:id="@+id/frameView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#7000"
+        android:orientation="vertical" >
+	    
+	        <ImageView
+	            android:id="@+id/afficheView"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:adjustViewBounds="true"
+	            android:contentDescription="@string/some_text"
+	            android:scaleType="centerCrop"
+	            android:src="@drawable/affiche_1" />
+	        
+	        <Button
+	            android:id="@+id/shareBtn"
+	            style="?android:attr/buttonStyleSmall"
+	            android:layout_width="54dp"
+	            android:layout_height="54dp"
+	            android:background="@drawable/add_friends"
+	            android:textColor="@color/white_bg" />
+
+		</FrameLayout>
+        
+        <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:background="@color/white_bg"
+        android:stretchColumns="*">
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#BDBDBD" >
+
+            <TextView
+                android:id="@+id/textLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/location"
+                android:background="@drawable/table_cell" 
+                android:padding="5dp"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/textDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/date"
+                android:background="@drawable/table_cell" 
+                android:padding="5dp"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:minLines="5"
+                android:text="@string/location_example" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:minLines="5"
+                android:text="@string/date_example" />
+
+        </TableRow>
+        
+        </TableLayout>
+        
+        <TextView
+                android:id="@+id/textFriends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/friends" 
+                android:padding="5dp"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        
+        <LinearLayout
+                android:id="@+id/layoutList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+		</LinearLayout>
+		
+        <TextView
+                android:id="@+id/textPageIndicator"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        
+    </LinearLayout>
+</ScrollView>

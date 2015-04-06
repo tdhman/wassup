@@ -3,6 +3,7 @@ package enst.infsi351.wassup;
 import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
@@ -164,13 +165,14 @@ public class MainActivity extends ActionBarActivity {
 	    	}
 	    	case 1:
 	    	{
-	    		Fragment fragment = new MesEvenementsFragment();
+	    		/*Fragment fragment = new MesEvenementsFragment();
 	            Bundle args = new Bundle();
 	            args.putInt(MesEvenementsFragment.ARG_FRAGMENT_NUMBER, position);
 	            fragment.setArguments(args);
 	
 	            FragmentManager fragmentManager = getFragmentManager();
-	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("evenements").commit();
+	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("evenements").commit();*/
+	    		startActivity(new Intent(this, MesEvenementsFragment.class));
 	    		break;
 	    	}
 	    	case 2:
@@ -242,31 +244,6 @@ public class MainActivity extends ActionBarActivity {
         // Pass any configuration change to the drawer toggls
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
-
-    /**
-     * Fragment that appears in the "content_frame", shows a planet
-     */
-    /*public static class PlanetFragment extends Fragment {
-        public static final String ARG_PLANET_NUMBER = "planet_number";
-
-        public PlanetFragment() {
-            // Empty constructor required for fragment subclasses
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_planet, container, false);
-            int i = getArguments().getInt(ARG_PLANET_NUMBER);
-            String planet = getResources().getStringArray(R.array.menu_array)[i];
-
-            int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
-                            "drawable", getActivity().getPackageName());
-            ((ImageView) rootView.findViewById(R.id.image)).setImageResource(imageId);
-            getActivity().setTitle(planet);
-            return rootView;
-        }
-    }*/
 }
 
 
