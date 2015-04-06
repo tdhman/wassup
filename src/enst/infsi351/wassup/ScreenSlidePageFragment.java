@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,6 +58,14 @@ public class ScreenSlidePageFragment extends Fragment {
  			  Toast.makeText(getActivity(), 
 	    		      "Image cliquée - " + imageResIds[imageId], 
 	    		      Toast.LENGTH_LONG).show();
+ 			 Fragment fragment = new EvenementFragment();
+ 	         Bundle args = new Bundle();
+ 	         args.putInt(EvenementFragment.ARG_FRAGMENT_NUMBER, imageResIds[imageId]);
+ 	         fragment.setArguments(args);
+ 	
+ 	         FragmentManager fragmentManager = getFragmentManager();
+ 	         fragmentManager.popBackStack();
+ 	         fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("evenement").commit();
  		   }});
     	BitmapWorkerTask task = new BitmapWorkerTask(imageView);
     	task.execute(imageResIds[imageId]);
@@ -69,6 +78,14 @@ public class ScreenSlidePageFragment extends Fragment {
 				Toast.makeText(getActivity(), 
 		    		      "Partager avec les amis - " + imageResIds[imageId], 
 		    		      Toast.LENGTH_LONG).show();
+				Fragment fragment = new InvitationFragment();
+	   	        Bundle args = new Bundle();
+	   	        args.putInt(EvenementFragment.ARG_FRAGMENT_NUMBER, imageResIds[imageId]);
+	   	        fragment.setArguments(args);
+	   	
+	   	        FragmentManager fragmentManager = getFragmentManager();
+	   	        fragmentManager.popBackStack();
+	   	        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("invitation").commit();
 			}
 		});
         

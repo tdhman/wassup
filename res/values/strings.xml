@@ -16,6 +16,8 @@
     <string name="info">Info pratique</string>
     <string name="description">\n- Pour cette évenement, vous pouvez&#8230;\n- Quelques lignes de description, etc.</string>
     <string name="page_indicator">Page Indicator</string>
+    <string name="search_friend">Inviter les amis</string>
+    <string name="added_friends">Amis ajoutés:</string>
     
     <string-array name="menu_array">
         <item>Acceuil</item>
@@ -30,6 +32,7 @@
     <string name="action_search">Recheche avancée</string>
     <string name="action_filter">Filtrage</string>
     <string name="event">Evénement</string>
+    <string name="invitation">Invitation</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="app_not_available">Sorry, there\'s no web browser available</string>
