@@ -1,6 +1,6 @@
 package enst.infsi351.wassup;
 
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,5 +33,4 @@ public class InvitationFragment extends Fragment{
         
 		return rootView;
 	}
-
 }

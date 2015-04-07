@@ -12,7 +12,6 @@
         android:padding="10dp"
         android:ems="10"
         android:text="@string/search_friend" >
-
         <requestFocus />
     </MultiAutoCompleteTextView>
 

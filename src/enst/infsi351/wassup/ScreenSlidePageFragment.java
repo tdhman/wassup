@@ -9,14 +9,12 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
@@ -58,36 +56,17 @@ public class ScreenSlidePageFragment extends Fragment {
  			  Toast.makeText(getActivity(), 
 	    		      "Image cliquée - " + imageResIds[imageId], 
 	    		      Toast.LENGTH_LONG).show();
- 			 Fragment fragment = new EvenementFragment();
+ 			 /*Fragment fragment = new EvenementFragment();
  	         Bundle args = new Bundle();
  	         args.putInt(EvenementFragment.ARG_FRAGMENT_NUMBER, imageResIds[imageId]);
  	         fragment.setArguments(args);
  	
  	         FragmentManager fragmentManager = getFragmentManager();
- 	         fragmentManager.popBackStack();
- 	         fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("evenement").commit();
+ 	         //fragmentManager.popBackStack();
+ 	         fragmentManager.beginTransaction().replace(R.id.content, fragment).commit();*/
  		   }});
     	BitmapWorkerTask task = new BitmapWorkerTask(imageView);
     	task.execute(imageResIds[imageId]);
-    	
-    	Button shareBtn = (Button) rootView.findViewById(R.id.shareBtn);
-        shareBtn.setBackgroundResource(R.drawable.add_friends);
-        shareBtn.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Toast.makeText(getActivity(), 
-		    		      "Partager avec les amis - " + imageResIds[imageId], 
-		    		      Toast.LENGTH_LONG).show();
-				Fragment fragment = new InvitationFragment();
-	   	        Bundle args = new Bundle();
-	   	        args.putInt(EvenementFragment.ARG_FRAGMENT_NUMBER, imageResIds[imageId]);
-	   	        fragment.setArguments(args);
-	   	
-	   	        FragmentManager fragmentManager = getFragmentManager();
-	   	        fragmentManager.popBackStack();
-	   	        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("invitation").commit();
-			}
-		});
         
     	FrameLayout frameView = (FrameLayout) rootView.findViewById(R.id.frameView);   
         DisplayMetrics displaymetrics = new DisplayMetrics();

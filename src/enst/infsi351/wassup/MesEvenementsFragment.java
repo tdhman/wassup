@@ -1,5 +1,7 @@
 package enst.infsi351.wassup;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.NavUtils;
@@ -9,6 +11,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.Toast;
 
 
 public class MesEvenementsFragment extends ActionBarActivity {
@@ -44,18 +50,37 @@ public class MesEvenementsFragment extends ActionBarActivity {
         mPager = (ViewPager) findViewById(R.id.pager);
         mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
+        
+        Button shareBtn = (Button) findViewById(R.id.shareBtn);
+        shareBtn.setBackgroundResource(R.drawable.add_friends);
+        shareBtn.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(v.getContext(), 
+		    		      "Partager avec les amis - " + imageResIds[mPager.getCurrentItem()], 
+		    		      Toast.LENGTH_LONG).show();
+				Fragment fragment = new InvitationFragment();
+	   	        Bundle args = new Bundle();
+	   	        args.putInt(EvenementFragment.ARG_FRAGMENT_NUMBER, imageResIds[mPager.getCurrentItem()]);
+	   	        fragment.setArguments(args);
+	   	
+	   	        FragmentManager fragmentManager = getFragmentManager();
+	   	        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("invitation").commit();
+			}
+		});
     }
 
     @Override
     public void onBackPressed() {
-        if (mPager.getCurrentItem() == 0) {
-            // If the user is currently looking at the first step, allow the system to handle the
-            // Back button. This calls finish() on this activity and pops the back stack.
-            super.onBackPressed();
-        } else {
-            // Otherwise, select the previous step.
-            mPager.setCurrentItem(mPager.getCurrentItem() - 1);
-        }
+    	if (!returnBackStackImmediate(getFragmentManager()))
+	        if (mPager.getCurrentItem() == 0) {
+	            // If the user is currently looking at the first step, allow the system to handle the
+	            // Back button. This calls finish() on this activity and pops the back stack.
+	            super.onBackPressed();
+	        } else {
+	            // Otherwise, select the previous step.
+	            mPager.setCurrentItem(mPager.getCurrentItem() - 1);
+	        }
     }
     
     @Override
@@ -72,6 +97,15 @@ public class MesEvenementsFragment extends ActionBarActivity {
         return super.onPrepareOptionsMenu(menu);
     }
     
+    private boolean returnBackStackImmediate(FragmentManager fm) {
+        if (fm.getBackStackEntryCount() > 0){
+        	fm.popBackStackImmediate();
+        	return true;
+        }
+        
+        return false;
+    }
+    
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action buttons
@@ -82,7 +116,8 @@ public class MesEvenementsFragment extends ActionBarActivity {
              */
             return true;
         case android.R.id.home: {
-            NavUtils.navigateUpFromSameTask(this);
+        	if (!returnBackStackImmediate(getFragmentManager()))
+        		NavUtils.navigateUpFromSameTask(this);
             return true;
         }
         default:
