@@ -18,6 +18,7 @@
     <string name="page_indicator">Page Indicator</string>
     <string name="search_friend">Inviter les amis</string>
     <string name="added_friends">Amis ajoutés:</string>
+    <string name="send">Envoyer</string>
     
     <string-array name="menu_array">
         <item>Acceuil</item>

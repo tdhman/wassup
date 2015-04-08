@@ -13,7 +13,7 @@ public class InvitationFragment extends Fragment{
 	public static final String ARG_FRAGMENT_NUMBER = "invitation_number";
 	
 	private static final String[] COUNTRIES = new String[] {
-        "Belgium", "France", "Italy", "Germany", "Spain"
+        "Hung", "Hoang", "Huy", "Hanzhi", "Hiep", "Duy", "Duong", "Marie", "Mai", "Man"
     };
 	
 	public InvitationFragment() {
