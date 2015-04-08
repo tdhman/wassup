@@ -17,6 +17,7 @@ Below is the list of tasks with their corresponding class and layout:
 - *Mes Invitations*: MesInvitationsFragment + fragment_mes_invitation
 - *Mes Notification*: MesNotificationsFragment + fragment_mes_notifications
 - *Mon Compte*: MonCompteFragment + fragment_mon_compte
+- *Invitation*: InvitationFragment + fragment_invitation
 
 However, for Avanced Search task, we can use Activity to implement it ( because it has multilple screen steps but i am not sure) so you should decide it by yourself! In MainActivity, the Advanced Search is in ActionBar of rightmenu and i have added "TODO" comment to mark the section of where you can put your Activity/Fragment call.
 
@@ -27,3 +28,4 @@ However, for Avanced Search task, we can use Activity to implement it ( because 
 ## Screenshots
 ![Mes Evenements](https://github.com/tdhman/wassup/blob/master/Screenshots/evenement.jpg "Mes Evenements")
 ![Evenement](https://github.com/tdhman/wassup/blob/master/Screenshots/mes_evenements.jpg "Evenement")
+![Invitation](https://github.com/tdhman/wassup/blob/master/Screenshots/invitation.jpg "Evenement")
