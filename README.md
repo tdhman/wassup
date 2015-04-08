@@ -20,7 +20,7 @@ Below is the list of tasks with their corresponding class and layout:
 
 However, for Avanced Search task, we can use Activity to implement it ( because it has multilple screen steps but i am not sure) so you should decide it by yourself! In MainActivity, the Advanced Search is in ActionBar of rightmenu and i have added "TODO" comment to mark the section of where you can put your Activity/Fragment call.
 
-## Finised tasks
+## Finished tasks
 - *Mes Evenements*: MesEvenementsFragment + fragment_mes_evenements
 - *Evenement*: EvenementFragment + fragment_evenement
 
