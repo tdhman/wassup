@@ -24,8 +24,11 @@ However, for Advanced Search task, we can use Activity to implement it ( because
 ## Finished tasks
 - *Mes Evenements*: MesEvenementsFragment + fragment_mes_evenements
 - *Evenement*: EvenementFragment + fragment_evenement
+- *Mes Invitations*: MesInvitationsFragment + fragment_mes_invitations + fragment_list_item
+- *Invitation*: InvitationFragment + fragment_invitation
 
 ## Screenshots
 ![Mes Evenements](https://github.com/tdhman/wassup/blob/master/Screenshots/evenement.jpg "Mes Evenements")
 ![Evenement](https://github.com/tdhman/wassup/blob/master/Screenshots/mes_evenements.jpg "Evenement")
-![Invitation](https://github.com/tdhman/wassup/blob/master/Screenshots/invitation.jpg "Evenement")
+![Mes Invitations](https://github.com/tdhman/wassup/blob/master/Screenshots/mes_invitation.jpg "Mes Invitations")
+![Invitation](https://github.com/tdhman/wassup/blob/master/Screenshots/invitation.jpg "Invitation")
