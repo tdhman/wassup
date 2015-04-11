@@ -59,7 +59,7 @@ public class InvitationArrayAdapter extends ArrayAdapter<Integer> {
 				
 			}
 		});
-		holder.titleText.setText("Hanzhi a vous envoyé une invitation");
+		holder.titleText.setText("Hanzhi vous a envoyé une invitation");
 		holder.descriptionText.setText("Titre du événement et description");
 		holder.btnAccept.setTag(position);
 		holder.btnAccept.setOnClickListener(new OnClickListener() {			
