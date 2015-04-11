@@ -30,5 +30,5 @@ However, for Advanced Search task, we can use Activity to implement it ( because
 ## Screenshots
 ![Mes Evenements](https://github.com/tdhman/wassup/blob/master/Screenshots/evenement.jpg "Mes Evenements")
 ![Evenement](https://github.com/tdhman/wassup/blob/master/Screenshots/mes_evenements.jpg "Evenement")
-![Mes Invitations](https://github.com/tdhman/wassup/blob/master/Screenshots/mes_invitation.jpg "Mes Invitations")
+![Mes Invitations](https://github.com/tdhman/wassup/blob/master/Screenshots/mes_invitations.jpg "Mes Invitations")
 ![Invitation](https://github.com/tdhman/wassup/blob/master/Screenshots/invitation.jpg "Invitation")
