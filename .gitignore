@@ -1,1 +1,4 @@
 bin/wassup.apk
+*.cache
+project.properties
+bin/jarlist.cache

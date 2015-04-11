@@ -5,11 +5,17 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="17"
+        android:minSdkVersion="16"
         android:targetSdkVersion="21" />
     
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true"/>
     <application
         android:allowBackup="true"
         android:largeHeap="true"
@@ -32,6 +38,11 @@
 	            android:name="android.support.PARENT_ACTIVITY"
 	            android:value="enst.infsi351.wassup.MainActivity" />
         </activity>
+        <meta-data android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
+        <meta-data
+    android:name="com.google.android.geo.API_KEY"
+    android:value="AIzaSyAueMp1wwG_hnN_cFqtwHluHVcqNM9kpes"/>
     </application>
 
 </manifest>
