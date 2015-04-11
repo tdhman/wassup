@@ -19,12 +19,14 @@
     <string name="search_friend">Inviter les amis</string>
     <string name="added_friends">Amis ajoutés:</string>
     <string name="send">Envoyer</string>
+    <string name="accept">Accepter</string>
+    <string name="refuse">Refuser</string>
     
     <string-array name="menu_array">
         <item>Acceuil</item>
         <item>Mes Evénements</item>
-        <item>Mes invitations</item>
-        <item>Mes notifications</item>
+        <item>Mes Invitations</item>
+        <item>Mes Notifications</item>
         <item>Mon Compte</item>
         <item>Aide?</item>
         <item>Déconnectez-vous</item>

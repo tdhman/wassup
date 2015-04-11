@@ -1,7 +1,7 @@
 package enst.infsi351.wassup;
 
 import android.annotation.SuppressLint;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;

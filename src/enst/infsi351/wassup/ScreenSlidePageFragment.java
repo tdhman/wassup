@@ -56,14 +56,6 @@ public class ScreenSlidePageFragment extends Fragment {
  			  Toast.makeText(getActivity(), 
 	    		      "Image cliquée - " + imageResIds[imageId], 
 	    		      Toast.LENGTH_LONG).show();
- 			 /*Fragment fragment = new EvenementFragment();
- 	         Bundle args = new Bundle();
- 	         args.putInt(EvenementFragment.ARG_FRAGMENT_NUMBER, imageResIds[imageId]);
- 	         fragment.setArguments(args);
- 	
- 	         FragmentManager fragmentManager = getFragmentManager();
- 	         //fragmentManager.popBackStack();
- 	         fragmentManager.beginTransaction().replace(R.id.content, fragment).commit();*/
  		   }});
     	BitmapWorkerTask task = new BitmapWorkerTask(imageView);
     	task.execute(imageResIds[imageId]);
