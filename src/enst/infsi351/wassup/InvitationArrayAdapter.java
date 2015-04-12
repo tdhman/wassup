@@ -5,6 +5,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
@@ -55,11 +56,10 @@ public class InvitationArrayAdapter extends ArrayAdapter<Integer> {
 	    
 		// Set data by position
 		final EditText refuseText = (EditText) rowView.findViewById(R.id.refuseText);
-		refuseText.setFocusableInTouchMode(true);
-		refuseText.setOnClickListener(new OnClickListener() {
+		refuseText.setOnFocusChangeListener(new OnFocusChangeListener() {			
 			@Override
-			public void onClick(View v) {
-				showOrHideSoftKeyboard(v, true);
+			public void onFocusChange(View v, boolean hasFocus) {
+				showOrHideSoftKeyboard(v, hasFocus);
 			}
 		});
 		holder.imageView.setImageResource(values[position]);
@@ -90,6 +90,8 @@ public class InvitationArrayAdapter extends ArrayAdapter<Integer> {
 			public void onClick(View v) {
 				if (refuseText.getVisibility() == View.GONE){
 					refuseText.setVisibility(View.VISIBLE);
+					if (refuseText.requestFocus())
+						showOrHideSoftKeyboard(v, true);
 				}
 				else {
 					refuseText.setVisibility(View.GONE);

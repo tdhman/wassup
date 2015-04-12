@@ -85,6 +85,7 @@
 			android:background="@drawable/custom_edittext"
 			android:gravity="top"
 			android:inputType="text"
+			android:imeOptions="actionDone"
 			android:hint="@string/refuse_text"
 			android:visibility="gone"
 			android:ems="10" >
