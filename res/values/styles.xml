@@ -49,5 +49,26 @@
 	<style name="ButtonStyle" parent="@android:style/Widget.Holo.Button">
     	<item name="android:fontFamily">sans-serif-light</item>
 	</style>
+	
+	<style name="BlueButton" parent="@android:style/Widget.Button.Small">
+	  <item name="android:layout_height">32dp</item>
+	  <item name="android:layout_width">wrap_content</item>
+	  <item name="android:background">@color/foursquare_blue</item>
+	  <item name="android:textColor">@color/white_bg</item>
+	</style>
+	
+	<style name="GreenButton" parent="@android:style/Widget.Button.Small">
+	  <item name="android:layout_height">32dp</item>
+	  <item name="android:layout_width">wrap_content</item>
+	  <item name="android:background">@color/vimeo_green</item>
+	  <item name="android:textColor">@color/white_bg</item>
+	</style>
+	
+	<style name="GrayButton" parent="@android:style/Widget.Button.Small">
+	  <item name="android:layout_height">32dp</item>
+	  <item name="android:layout_width">wrap_content</item>
+	  <item name="android:background">@color/gray</item>
+	  <item name="android:textColor">@color/white_bg</item>
+	</style>
 
 </resources>

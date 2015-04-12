@@ -165,13 +165,6 @@ public class MainActivity extends ActionBarActivity {
 	    	}
 	    	case 1:
 	    	{
-	    		/*Fragment fragment = new MesEvenementsFragment();
-	            Bundle args = new Bundle();
-	            args.putInt(MesEvenementsFragment.ARG_FRAGMENT_NUMBER, position);
-	            fragment.setArguments(args);
-	
-	            FragmentManager fragmentManager = getFragmentManager();
-	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("evenements").commit();*/
 	    		startActivity(new Intent(this, MesEvenementsFragment.class));
 	    		break;
 	    	}

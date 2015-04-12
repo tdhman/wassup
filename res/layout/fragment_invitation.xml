@@ -98,11 +98,10 @@
         android:gravity="end" >
         
         <Button
-        android:id="@+id/button1"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/send" />
+	        android:id="@+id/btnEnvoyer"
+	        style="@style/BlueButton"
+	        android:textColor="@color/white_bg"
+	        android:text="@string/send" />
         
     </LinearLayout>
 
