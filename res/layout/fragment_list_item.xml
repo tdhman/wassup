@@ -15,6 +15,7 @@
             android:src="@drawable/affiche_1" />
 
 	    <LinearLayout
+	        android:id="@+id/content"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_alignParentEnd="true"
@@ -51,6 +52,7 @@
 			        android:layout_marginTop="5dp"
 			        android:focusable="false"
 			        android:text="@string/refuse" />
+	            
 	        </LinearLayout>
 	    
 	    </LinearLayout>
@@ -67,5 +69,26 @@
 	        android:text="@string/some_text"
 	        android:textSize="16sp" />
 	    
+	    <EditText
+			android:id="@+id/refuseText"
+			android:labelFor="@+id/btnRefuse"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentEnd="true"
+	        android:layout_alignParentBottom="true"
+			android:layout_toEndOf="@id/imageView"
+			android:layout_below="@+id/content"
+			android:layout_gravity="center_horizontal"
+			android:layout_marginEnd="5dp"
+			android:layout_marginTop="5dp"
+			android:padding="5dp"
+			android:background="@drawable/custom_edittext"
+			android:gravity="top"
+			android:inputType="text"
+			android:hint="@string/refuse_text"
+			android:visibility="gone"
+			android:ems="10" >
+	        <requestFocus/>
+		</EditText>
 
 </RelativeLayout>

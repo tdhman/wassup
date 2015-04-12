@@ -1,12 +1,15 @@
 package enst.infsi351.wassup;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,7 +40,7 @@ public class InvitationArrayAdapter extends ArrayAdapter<Integer> {
 		View rowView = convertView;
 		ViewHolder holder = null;
 		
-		if(rowView == null){
+		if(convertView == null){
 			LayoutInflater mLayoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			rowView = mLayoutInflater.inflate(R.layout.fragment_list_item, container, false);
 			holder = new ViewHolder();
@@ -51,6 +54,14 @@ public class InvitationArrayAdapter extends ArrayAdapter<Integer> {
 			holder = (ViewHolder) rowView.getTag();
 	    
 		// Set data by position
+		final EditText refuseText = (EditText) rowView.findViewById(R.id.refuseText);
+		refuseText.setFocusableInTouchMode(true);
+		refuseText.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				showOrHideSoftKeyboard(v, true);
+			}
+		});
 		holder.imageView.setImageResource(values[position]);
 		holder.imageView.setTag(position);
 		holder.imageView.setOnClickListener(new OnClickListener() {
@@ -68,15 +79,25 @@ public class InvitationArrayAdapter extends ArrayAdapter<Integer> {
 				Toast.makeText(v.getContext(), 
 		    		      "Accepter l'invitation du évenement - " + values[(Integer) v.getTag()], 
 		    		      Toast.LENGTH_LONG).show();
+				if (refuseText.getVisibility() == View.VISIBLE)
+					refuseText.setVisibility(View.GONE);
 			}
 		});
+		
 		holder.btnRefuse.setTag(position);
 		holder.btnRefuse.setOnClickListener(new OnClickListener() {			
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(v.getContext(), 
-		    		      "Refuser l'invitation du évenement - " + values[(Integer)v.getTag()], 
-		    		      Toast.LENGTH_LONG).show();
+				if (refuseText.getVisibility() == View.GONE){
+					refuseText.setVisibility(View.VISIBLE);
+				}
+				else {
+					refuseText.setVisibility(View.GONE);
+					showOrHideSoftKeyboard(v, false);
+					Toast.makeText(v.getContext(), 
+			    		      "Refuser l'invitation du évenement - " + values[(Integer)v.getTag()], 
+			    		      Toast.LENGTH_LONG).show();
+				}
 			}
 		});
 
@@ -98,4 +119,12 @@ public class InvitationArrayAdapter extends ArrayAdapter<Integer> {
     public long getItemId(int position) {
         return position;
     }
+	
+	public void showOrHideSoftKeyboard(View view, boolean show) {
+	    InputMethodManager inputMethodManager = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+	    if(show)
+	    	inputMethodManager.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
+	    else
+	    	inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+	}
 } 

@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:minLines="3"
-                android:text="@string/some_text" />
+                android:text="@string/location_example" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:minLines="3"
-                android:text="@string/some_text" />
+                android:text="@string/date_example" />
 
         </TableRow>
 

@@ -11,7 +11,7 @@
     <string name="date_example">Sam 4 avril 2015\n10:00 am\nà\nLun 6 avril 2015\n10:00pm</string>
     <string name="friends">Participants</string>
     <string name="question">Voulez-vous y participer?</string>
-    <string name="answer_yes">Participez-vous</string>
+    <string name="answer_yes">Je participe!</string>
     <string name="answer_friend">Proposez aux amis</string>
     <string name="info">Info pratique</string>
     <string name="description">\n- Pour cette évenement, vous pouvez&#8230;\n- Quelques lignes de description, etc.</string>
@@ -21,6 +21,7 @@
     <string name="send">Envoyer</string>
     <string name="accept">Accepter</string>
     <string name="refuse">Refuser</string>
+    <string name="refuse_text">Saisir un message</string>
 
     <string-array name="menu_array">
         <item>Acceuil</item>
