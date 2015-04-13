@@ -35,9 +35,7 @@ public class AcceuilFragment extends Fragment implements OnMapReadyCallback{
 //        textView.setText(text);
 //        getActivity().setTitle(text);
         
-        viewPager = (ViewPager) rootView.findViewById(R.id.viewPager);
-        PagerAdapter adapter = new CustomAdapter(b);
-        viewPager.setAdapter(adapter);
+        
         
         
         MapFragment mapFragment = (MapFragment) getFragmentManager()
