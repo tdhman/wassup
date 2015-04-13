@@ -6,5 +6,6 @@
 	<classpathentry kind="lib" path="libs/picasso-2.5.2.jar"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="lib" path="D:/Dropbox/1.TELECOM PARISTECH/INFSI351/Projet/universal-image-loader-1.9.3-with-sources.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
