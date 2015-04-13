@@ -21,6 +21,7 @@ public final class R {
         public static final int text=0x7f040009;
     }
     public static final class array {
+        public static final int invite_array=0x7f0c0001;
         public static final int menu_array=0x7f0c0000;
     }
     public static final class attr {
@@ -1719,8 +1720,8 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f09002e;
         public static final int action_mode_bar_stub=0x7f09002d;
         public static final int action_mode_close_button=0x7f090020;
-        public static final int action_search=0x7f090068;
-        public static final int action_settings=0x7f090069;
+        public static final int action_search=0x7f090069;
+        public static final int action_settings=0x7f09006a;
         public static final int activity_chooser_view_content=0x7f090021;
         public static final int afficheView=0x7f090047;
         public static final int always=0x7f090014;
@@ -1753,19 +1754,19 @@ containing a value of this type.
         public static final int favoriteBtn=0x7f090050;
         public static final int firstLine=0x7f09005d;
         public static final int frameView=0x7f090046;
-        public static final int gallery=0x7f090062;
+        public static final int gallery=0x7f090063;
         public static final int home=0x7f090000;
         public static final int homeAsUp=0x7f09000e;
         public static final int icon=0x7f090026;
         public static final int ifRoom=0x7f090016;
         public static final int image=0x7f090023;
         public static final int imageView=0x7f09005b;
-        public static final int layoutList=0x7f090065;
+        public static final int layoutList=0x7f090066;
         public static final int left_drawer=0x7f090041;
         public static final int listMode=0x7f09000a;
-        public static final int listVew=0x7f090063;
+        public static final int listVew=0x7f090064;
         public static final int list_item=0x7f090025;
-        public static final int menu_settings=0x7f090067;
+        public static final int menu_settings=0x7f090068;
         public static final int middle=0x7f09001d;
         public static final int multiAutoCompleteTextView=0x7f090052;
         public static final int never=0x7f090017;
@@ -1775,7 +1776,7 @@ containing a value of this type.
         public static final int progress_circular=0x7f090007;
         public static final int progress_horizontal=0x7f090008;
         public static final int radio=0x7f09002b;
-        public static final int refuseText=0x7f090061;
+        public static final int refuseText=0x7f090062;
         public static final int search_badge=0x7f090035;
         public static final int search_bar=0x7f090034;
         public static final int search_button=0x7f090036;
@@ -1792,6 +1793,7 @@ containing a value of this type.
         public static final int showCustom=0x7f090010;
         public static final int showHome=0x7f090011;
         public static final int showTitle=0x7f090012;
+        public static final int spinner=0x7f090061;
         public static final int split_action_bar=0x7f090004;
         public static final int submit_area=0x7f09003c;
         public static final int tabMode=0x7f09000c;
@@ -1799,9 +1801,9 @@ containing a value of this type.
         public static final int tableRow2=0x7f09004c;
         public static final int tableRow3=0x7f09004f;
         public static final int textDate=0x7f09004b;
-        public static final int textFriends=0x7f090064;
+        public static final int textFriends=0x7f090065;
         public static final int textLocation=0x7f09004a;
-        public static final int textPageIndicator=0x7f090066;
+        public static final int textPageIndicator=0x7f090067;
         public static final int textTitle=0x7f090048;
         public static final int textView1=0x7f090045;
         public static final int textView2=0x7f090051;
@@ -2157,10 +2159,10 @@ containing a value of this type.
     
          */
         public static final int Base_Widget_AppCompat_Toolbar_Button_Navigation=0x7f0b0095;
-        public static final int BlueButton=0x7f0b00ff;
-        public static final int ButtonStyle=0x7f0b00fe;
-        public static final int GrayButton=0x7f0b0101;
-        public static final int GreenButton=0x7f0b0100;
+        public static final int BlueButton=0x7f0b0100;
+        public static final int ButtonStyle=0x7f0b00ff;
+        public static final int GrayButton=0x7f0b0102;
+        public static final int GreenButton=0x7f0b0101;
         /**  ActionBar styles 
          */
         public static final int MyActionBar=0x7f0b00fa;
@@ -2168,6 +2170,9 @@ containing a value of this type.
          */
         public static final int MyActionBar_MenuStyle=0x7f0b00fb;
         public static final int MyActionBar_PopupMenu=0x7f0b00fc;
+        /**  Spinner styles 
+         */
+        public static final int MySpinnerItemStyle=0x7f0b00fd;
         public static final int Platform_AppCompat=0x7f0b00d5;
         public static final int Platform_AppCompat_Dialog=0x7f0b00d7;
         public static final int Platform_AppCompat_Light=0x7f0b00d6;
@@ -2233,7 +2238,7 @@ containing a value of this type.
         public static final int TextAppearance_Widget_AppCompat_Toolbar_Title=0x7f0b0039;
         /**  Font styles 
          */
-        public static final int TextViewStyle=0x7f0b00fd;
+        public static final int TextViewStyle=0x7f0b00fe;
         /**  Themes in the "Theme.AppCompat" family will contain an action bar by default.
          If Holo themes are available on the current platform version they will be used.
          A limited Holo-styled action bar will be provided on platform versions older

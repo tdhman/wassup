@@ -34,7 +34,7 @@ public class MesInvitationsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_mes_invitations, container, false);
         
         listView = (ListView) rootView.findViewById(R.id.listVew);
-        invitationAdapter = new InvitationArrayAdapter(getActivity(), imageResIds);
+        invitationAdapter = new InvitationArrayAdapter(getActivity(), imageResIds, getFragmentManager());
         listView.setAdapter(invitationAdapter);
         
         listView.setOnItemClickListener(new OnItemClickListener() {

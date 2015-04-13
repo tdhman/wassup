@@ -33,6 +33,11 @@
         <item>Déconnectez-vous</item>
         <item>A propos</item>
     </string-array>
+    
+    <string-array name="invite_array">
+        <item>Accepté</item>
+        <item>Refusé</item>
+    </string-array>
 
     <string name="action_search">Recheche avancée</string>
     <string name="action_filter">Filtrage</string>

@@ -17,6 +17,7 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="android:actionBarStyle">@style/MyActionBar</item>
         <item name="android:popupMenuStyle">@style/MyActionBar.PopupMenu</item>
+        <item name="android:spinnerDropDownItemStyle">@style/MySpinnerItemStyle</item>
         <item name="android:textViewStyle">@style/TextViewStyle</item>
     	<item name="android:buttonStyle">@style/ButtonStyle</item>
     	<item name="android:windowActionBar">true</item>
@@ -24,6 +25,7 @@
         <item name="actionBarStyle">@style/MyActionBar</item>
         <item name="popupMenuStyle">@style/MyActionBar.PopupMenu</item>
         <item name="windowActionBar">true</item>
+        <item name="spinnerDropDownItemStyle">@style/MySpinnerItemStyle</item>
     </style>
     
     <!-- ActionBar styles -->
@@ -39,6 +41,11 @@
 	<style name="MyActionBar.PopupMenu" parent="@android:style/Widget.Holo.Light.PopupMenu">
         <item name="android:popupBackground">@color/white_bg</item>
         <item name="android:dropDownSelector">@color/twitter_blue</item>
+    </style>
+    
+	<!-- Spinner styles -->
+	<style name="MySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+    	<item name="android:textColor">@color/vimeo_green</item>
     </style>
     
 	<!-- Font styles -->
