@@ -7,42 +7,55 @@
     <uses-sdk
         android:minSdkVersion="16"
         android:targetSdkVersion="21" />
-    
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-	<uses-feature
+
+    <uses-feature
         android:glEsVersion="0x00020000"
-        android:required="true"/>
+        android:required="true" />
+
     <application
         android:allowBackup="true"
-        android:largeHeap="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="enst.infsi351.wassup.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name="enst.infsi351.wassup.MesEvenementsFragment"
             android:label="@string/app_name" >
+
             <!-- The meta-data element is needed for versions lower than 4.1 -->
-	        <meta-data
-	            android:name="android.support.PARENT_ACTIVITY"
-	            android:value="enst.infsi351.wassup.MainActivity" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="enst.infsi351.wassup.MainActivity" />
         </activity>
-        <meta-data android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version" />
+        <activity
+            android:name="enst.infsi351.wassup.MonCompteFragment"
+            android:label="@string/app_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="enst.infsi351.wassup.MainActivity" />
+        </activity>
+
         <meta-data
-    android:name="com.google.android.geo.API_KEY"
-    android:value="AIzaSyAueMp1wwG_hnN_cFqtwHluHVcqNM9kpes"/>
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAueMp1wwG_hnN_cFqtwHluHVcqNM9kpes" />
     </application>
 
 </manifest>
