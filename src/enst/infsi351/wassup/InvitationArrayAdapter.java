@@ -35,12 +35,6 @@ public class InvitationArrayAdapter extends ArrayAdapter<Integer> {
 		Button btnAccept;
 		Button btnRefuse;
 		Spinner spinner;
-		boolean answered = false;
-		
-		ViewHolder(){
-			if (answered)
-				hideButtons();
-		}
 		
 		void hideButtons(){
 			if (btnAccept != null)
@@ -49,11 +43,7 @@ public class InvitationArrayAdapter extends ArrayAdapter<Integer> {
 				btnRefuse.setVisibility(View.GONE);
 			spinner.setVisibility(View.VISIBLE);
 		}
-		
-		void answer(){
-			answered = true;
-			hideButtons();
-		}
+	
 	}
 
 	public InvitationArrayAdapter(Context context, Integer[] values, FragmentManager fragmentManager) {
@@ -126,7 +116,7 @@ public class InvitationArrayAdapter extends ArrayAdapter<Integer> {
 		holder.btnAccept.setOnClickListener(new OnClickListener() {			
 			@Override
 			public void onClick(View v) {
-				holder.answer();
+				holder.hideButtons();
 				Toast.makeText(v.getContext(), 
 		    		      "Accepter l'invitation du évenement - " + v.getTag(), 
 		    		      Toast.LENGTH_LONG).show();
@@ -148,7 +138,7 @@ public class InvitationArrayAdapter extends ArrayAdapter<Integer> {
 					refuseText.setVisibility(View.GONE);
 					showOrHideSoftKeyboard(v, false);
 					holder.spinner.setSelection(1);
-					holder.answer();
+					holder.hideButtons();
 					Toast.makeText(v.getContext(), 
 			    		      "Refuser l'invitation du évenement - " + v.getTag(), 
 			    		      Toast.LENGTH_LONG).show();
