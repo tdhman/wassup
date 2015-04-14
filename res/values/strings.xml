@@ -23,6 +23,9 @@
     <string name="refuse">Refuser</string>
     <string name="compare">Comparer</string>
     <string name="refuse_text">Saisir un message</string>
+    <string name="username">richard123</string>
+    <string name="phone">06 24 56 12 82</string>
+    <string name="email">richard123@gmail.com</string>
 
     <string-array name="menu_array">
         <item>Acceuil</item>

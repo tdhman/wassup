@@ -2173,8 +2173,8 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0c0043;
         public static final int action_mode_bar_stub=0x7f0c0042;
         public static final int action_mode_close_button=0x7f0c0035;
-        public static final int action_search=0x7f0c0090;
-        public static final int action_settings=0x7f0c0091;
+        public static final int action_search=0x7f0c0092;
+        public static final int action_settings=0x7f0c0093;
         public static final int activity_chooser_view_content=0x7f0c0036;
         public static final int adjust_height=0x7f0c0009;
         public static final int adjust_width=0x7f0c000a;
@@ -2234,8 +2234,10 @@ containing a value of this type.
         public static final int imageView=0x7f0c0077;
         public static final int imageView1=0x7f0c008b;
         public static final int imageView2=0x7f0c008c;
-        public static final int imageView3=0x7f0c008d;
-        public static final int imageView4=0x7f0c008e;
+        public static final int imageView3=0x7f0c008e;
+        public static final int imageView4=0x7f0c008f;
+        public static final int imageView5=0x7f0c0090;
+        public static final int imageView6=0x7f0c008d;
         public static final int innerLay=0x7f0c005f;
         public static final int layoutList=0x7f0c0089;
         public static final int left_drawer=0x7f0c0056;
@@ -2245,7 +2247,7 @@ containing a value of this type.
         public static final int list_item=0x7f0c003a;
         public static final int map=0x7f0c005c;
         public static final int match_parent=0x7f0c0017;
-        public static final int menu_settings=0x7f0c008f;
+        public static final int menu_settings=0x7f0c0091;
         public static final int middle=0x7f0c0032;
         public static final int monochrome=0x7f0c001f;
         public static final int multiAutoCompleteTextView=0x7f0c0074;
@@ -2374,10 +2376,9 @@ containing a value of this type.
         public static final int fragment_mes_notifications=0x7f030021;
         public static final int fragment_mon_compte=0x7f030022;
         public static final int fragment_screen_slide_page=0x7f030023;
-        public static final int image_item=0x7f030024;
-        public static final int invitationevent=0x7f030025;
-        public static final int mesamies=0x7f030026;
-        public static final int support_simple_spinner_dropdown_item=0x7f030027;
+        public static final int invitationevent=0x7f030024;
+        public static final int mesamies=0x7f030025;
+        public static final int support_simple_spinner_dropdown_item=0x7f030026;
     }
     public static final class menu {
         public static final int activity_main=0x7f0e0000;
@@ -2445,14 +2446,14 @@ containing a value of this type.
          */
         public static final int abc_toolbar_collapse_description=0x7f07002a;
         public static final int accept=0x7f070002;
-        public static final int action_filter=0x7f07004c;
-        public static final int action_search=0x7f07004b;
-        public static final int action_settings=0x7f070054;
+        public static final int action_filter=0x7f07004f;
+        public static final int action_search=0x7f07004e;
+        public static final int action_settings=0x7f070057;
         public static final int added_friends=0x7f070046;
         public static final int answer_friend=0x7f070041;
         public static final int answer_yes=0x7f070040;
         public static final int app_name=0x7f070036;
-        public static final int app_not_available=0x7f070051;
+        public static final int app_not_available=0x7f070054;
         /**   Text for notification shown when the Android Wear apps needs to be updated. Only shown on the wearable. [CHAR LIMIT=NONE] 
          */
         public static final int common_android_wear_notification_needs_update_text=0x7f070009;
@@ -2568,17 +2569,19 @@ containing a value of this type.
         public static final int date_example=0x7f07003d;
         public static final int decline=0x7f070003;
         public static final int description=0x7f070043;
-        public static final int drawer_close=0x7f070050;
-        public static final int drawer_open=0x7f07004f;
-        public static final int event=0x7f07004d;
+        public static final int drawer_close=0x7f070053;
+        public static final int drawer_open=0x7f070052;
+        public static final int email=0x7f07004d;
+        public static final int event=0x7f070050;
         public static final int friends=0x7f07003e;
-        public static final int hello_world=0x7f070053;
+        public static final int hello_world=0x7f070056;
         public static final int info=0x7f070042;
-        public static final int invitation=0x7f07004e;
+        public static final int invitation=0x7f070051;
         public static final int location=0x7f07003a;
         public static final int location_example=0x7f07003b;
         public static final int menu_settings=0x7f070038;
         public static final int page_indicator=0x7f070044;
+        public static final int phone=0x7f07004c;
         public static final int question=0x7f07003f;
         public static final int refuse=0x7f070048;
         public static final int refuse_text=0x7f07004a;
@@ -2588,7 +2591,8 @@ containing a value of this type.
         public static final int store_picture_message=0x7f070001;
         public static final int store_picture_title=0x7f070000;
         public static final int title=0x7f070039;
-        public static final int title_activity_splash_screen=0x7f070052;
+        public static final int title_activity_splash_screen=0x7f070055;
+        public static final int username=0x7f07004b;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */
