@@ -21,6 +21,7 @@
     <string name="send">Envoyer</string>
     <string name="accept">Accepter</string>
     <string name="refuse">Refuser</string>
+    <string name="compare">Comparer</string>
     <string name="refuse_text">Saisir un message</string>
 
     <string-array name="menu_array">

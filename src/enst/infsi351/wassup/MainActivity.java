@@ -1,12 +1,12 @@
 package enst.infsi351.wassup;
 
 import android.annotation.TargetApi;
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -144,6 +144,21 @@ public class MainActivity extends ActionBarActivity {
             selectItem(position);
         }
     }
+    
+    public void viewEvent(View view) {
+    	try {
+	    	int imageId = Integer.parseInt(view.getTag().toString().substring(1));
+	    	Fragment fragment = new EvenementFragment();
+		    Bundle args = new Bundle();
+		    args.putInt(EvenementFragment.ARG_FRAGMENT_NUMBER, imageId);
+		    fragment.setArguments(args);
+		    
+		    FragmentManager fragmentManager = getSupportFragmentManager();
+		    fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("evenement").commit();
+    	} catch (NumberFormatException e){
+    		// TODO: handle exception
+    	}
+    }
 
     /*** TODO
      * This function helps to change view between different fragments
@@ -159,7 +174,7 @@ public class MainActivity extends ActionBarActivity {
 	            args.putInt(AcceuilFragment.ARG_FRAGMENT_NUMBER, position);
 	            fragment.setArguments(args);
 	
-	            FragmentManager fragmentManager = getFragmentManager();
+	            FragmentManager fragmentManager = getSupportFragmentManager();
 	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("acceuil").commit();
 	    		break;
 	    	}
@@ -175,7 +190,7 @@ public class MainActivity extends ActionBarActivity {
 	            args.putInt(MesInvitationsFragment.ARG_FRAGMENT_NUMBER, position);
 	            fragment.setArguments(args);
 	
-	            FragmentManager fragmentManager = getFragmentManager();
+	            FragmentManager fragmentManager = getSupportFragmentManager();
 	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("invitations").commit();
 	    		break;
 	    	}
@@ -186,7 +201,7 @@ public class MainActivity extends ActionBarActivity {
 	            args.putInt(MesNotificationsFragment.ARG_FRAGMENT_NUMBER, position);
 	            fragment.setArguments(args);
 	
-	            FragmentManager fragmentManager = getFragmentManager();
+	            FragmentManager fragmentManager = getSupportFragmentManager();
 	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("notifications").commit();
 	    		break;
 	    	}
@@ -233,8 +248,8 @@ public class MainActivity extends ActionBarActivity {
     
     @Override
     public void onBackPressed() {
-    	if (getFragmentManager().getBackStackEntryCount() > 1) {
-            getFragmentManager().popBackStack();
+    	if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
+            getSupportFragmentManager().popBackStack();
         } else {
             super.onBackPressed();
         }

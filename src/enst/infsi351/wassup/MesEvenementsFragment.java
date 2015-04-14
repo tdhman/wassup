@@ -1,8 +1,8 @@
 package enst.infsi351.wassup;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.NavUtils;
 import android.support.v4.view.PagerAdapter;
@@ -64,7 +64,7 @@ public class MesEvenementsFragment extends ActionBarActivity {
 	   	        args.putInt(EvenementFragment.ARG_FRAGMENT_NUMBER, imageResIds[mPager.getCurrentItem()]);
 	   	        fragment.setArguments(args);
 	   	
-	   	        FragmentManager fragmentManager = getFragmentManager();
+	   	        FragmentManager fragmentManager = getSupportFragmentManager();
 	   	        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("invitation").commit();
 			}
 		});
@@ -72,7 +72,7 @@ public class MesEvenementsFragment extends ActionBarActivity {
 
     @Override
     public void onBackPressed() {
-    	if (!returnBackStackImmediate(getFragmentManager()))
+    	if (!returnBackStackImmediate(getSupportFragmentManager()))
 	        if (mPager.getCurrentItem() == 0) {
 	            // If the user is currently looking at the first step, allow the system to handle the
 	            // Back button. This calls finish() on this activity and pops the back stack.
@@ -116,7 +116,7 @@ public class MesEvenementsFragment extends ActionBarActivity {
              */
             return true;
         case android.R.id.home: {
-        	if (!returnBackStackImmediate(getFragmentManager()))
+        	if (!returnBackStackImmediate(getSupportFragmentManager()))
         		NavUtils.navigateUpFromSameTask(this);
             return true;
         }
@@ -124,14 +124,14 @@ public class MesEvenementsFragment extends ActionBarActivity {
             return super.onOptionsItemSelected(item);
         }
     }
-    
-    
-    /**
+
+
+	/**
      * A simple pager adapter that represents ScreenSlidePageFragment objects, in
      * sequence.
      */
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
-        public ScreenSlidePagerAdapter(android.support.v4.app.FragmentManager fm) {
+        public ScreenSlidePagerAdapter(FragmentManager fm) {
             super(fm);
         }
 

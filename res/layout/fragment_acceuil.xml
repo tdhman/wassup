@@ -21,236 +21,202 @@
 
 	<fragment
 	    android:id="@+id/map"
-	    android:name="com.google.android.gms.maps.MapFragment"
+	    class="com.google.android.gms.maps.SupportMapFragment"
 	    android:layout_alignParentTop="true"
 	    android:layout_width="match_parent"
-	    android:layout_height="265dp" />
+	    android:layout_height="300dp" />
 
-<HorizontalScrollView
-    android:id="@+id/hsv"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/map"
-    android:layout_above="@+id/comparer"
-    android:fillViewport="true"
-    android:measureAllChildren="false"
-    android:scrollbars="horizontal" >
-    <LinearLayout
-        android:id="@+id/innerLay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal" >
-        
-        <LinearLayout
-            android:id="@+id/as_needed_medication"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_margin="5dp"
-    		android:padding="0dp"
-            android:orientation="vertical" >
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal" >
-                <CheckBox
-                    android:id="@+id/checkBox1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:text="" />
-				<ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/checkBox1"
-                    android:layout_alignParentBottom="true"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/affiche_1" />
+	<HorizontalScrollView
+	    android:id="@+id/hsv"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/map"
+	    android:layout_above="@+id/comparer"
+	    android:fillViewport="true"
+	    android:measureAllChildren="false"
+	    android:scrollbars="horizontal" >
+	    <LinearLayout
+	        android:id="@+id/innerLay"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_vertical"
+	        android:orientation="horizontal" >
+	        
+	            <RelativeLayout
+	                android:layout_width="fill_parent"
+	                android:layout_height="match_parent"
+	                android:orientation="horizontal" >
+	                <CheckBox
+	                    android:id="@+id/checkBox1"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_alignParentTop="true"
+	                    android:layout_centerHorizontal="true"
+	                    android:text="" />
+					<ImageView
+					    android:contentDescription="@string/some_text"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_below="@+id/checkBox1"
+	                    android:layout_alignParentBottom="true"
+	                    android:adjustViewBounds="true"
+	                    android:onClick="viewEvent"
+	                    android:tag="?drawable/affiche_1"
+	                    android:src="@drawable/affiche_1" />
+	
+	            </RelativeLayout>
+	        
+	            <RelativeLayout
+	                android:layout_width="fill_parent"
+	                android:layout_height="match_parent"
+	                android:orientation="horizontal" >
+					
+	                <CheckBox
+	                    android:id="@+id/checkBox2"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_alignParentTop="true"
+	                    android:layout_centerHorizontal="true"
+	                    android:text="" />
+	                <ImageView
+	                    android:contentDescription="@string/some_text"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_below="@+id/checkBox2"
+	                    android:layout_alignParentBottom="true"
+	                    android:adjustViewBounds="true"
+	                    android:onClick="viewEvent"
+	                    android:tag="?drawable/affiche_2"
+	                    android:src="@drawable/affiche_2" />
+	        
+	            </RelativeLayout>
 
-            </RelativeLayout>
-        </LinearLayout>
-        
-        <LinearLayout
-            android:id="@+id/asthma_action_plan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_margin="5dp"
-    		android:padding="0dp"
-            android:orientation="vertical" >
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal" >
-				
-                <CheckBox
-                    android:id="@+id/checkBox2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:text="" />
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/checkBox2"
-                    android:layout_alignParentBottom="true"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/affiche_2" />
-        
-            </RelativeLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/controlled_medication"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_margin="5dp"
-    		android:padding="0dp"
-            android:orientation="vertical" >
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal" >
-                <CheckBox
-                    android:id="@+id/checkBox3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:text="" />
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/checkBox3"
-                    android:layout_alignParentBottom="true"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/affiche_3" />
-            </RelativeLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/rescue_medication"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_margin="5dp"
-    		android:padding="0dp"
-            android:orientation="vertical" >
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent" >
-                
-                <CheckBox
-                    android:id="@+id/checkBox4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:text="" />
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/checkBox4"
-                    android:layout_alignParentBottom="true"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/affiche_4" />
-            </RelativeLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/your_symptoms"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_margin="5dp"
-    		android:padding="0dp"
-            android:orientation="vertical" >
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent" >
-                
-                <CheckBox
-                    android:id="@+id/checkBox5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:text="" />
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/checkBox5"
-                    android:layout_alignParentBottom="true"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/affiche_5" />
-            </RelativeLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/your_triggers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_margin="5dp"
-    		android:padding="0dp"
-            android:orientation="vertical" >
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent" >
-                
-                <CheckBox
-                    android:id="@+id/checkBox6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:text="" />
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/checkBox6"
-                    android:layout_alignParentBottom="true"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/affiche_6" />
-            </RelativeLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/wheeze_rate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_margin="5dp"
-    		android:padding="0dp"
-            android:orientation="vertical" >
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent" >
-                
-                <CheckBox
-                    android:id="@+id/checkBox7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:text="" />
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/checkBox7"
-                    android:layout_alignParentBottom="true"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/affiche_7" />
-            </RelativeLayout>
-        </LinearLayout>
-    </LinearLayout>
-</HorizontalScrollView>
+	            <RelativeLayout
+	                android:layout_width="fill_parent"
+	                android:layout_height="match_parent"
+	                android:orientation="horizontal" >
+	                <CheckBox
+	                    android:id="@+id/checkBox3"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_alignParentTop="true"
+	                    android:layout_centerHorizontal="true"
+	                    android:text="" />
+	                <ImageView
+	                    android:contentDescription="@string/some_text"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_below="@+id/checkBox3"
+	                    android:layout_alignParentBottom="true"
+	                    android:adjustViewBounds="true"
+	                    android:onClick="viewEvent"
+	                    android:tag="?drawable/affiche_3"
+	                    android:src="@drawable/affiche_3" />
+	            </RelativeLayout>
+
+	            <RelativeLayout
+	                android:layout_width="fill_parent"
+	                android:layout_height="match_parent" >
+	                
+	                <CheckBox
+	                    android:id="@+id/checkBox4"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_alignParentTop="true"
+	                    android:layout_centerHorizontal="true"
+	                    android:text="" />
+	                <ImageView
+	                    android:contentDescription="@string/some_text"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_below="@+id/checkBox4"
+	                    android:layout_alignParentBottom="true"
+	                    android:adjustViewBounds="true"
+	                    android:onClick="viewEvent"
+	                    android:tag="?drawable/affiche_4"
+	                    android:src="@drawable/affiche_4" />
+	            </RelativeLayout>
+	        
+	            <RelativeLayout
+	                android:layout_width="fill_parent"
+	                android:layout_height="match_parent" >
+	                
+	                <CheckBox
+	                    android:id="@+id/checkBox5"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_alignParentTop="true"
+	                    android:layout_centerHorizontal="true"
+	                    android:text="" />
+	                <ImageView
+	                    android:contentDescription="@string/some_text"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_below="@+id/checkBox5"
+	                    android:layout_alignParentBottom="true"
+	                    android:adjustViewBounds="true"
+	                    android:onClick="viewEvent"
+	                    android:tag="?drawable/affiche_5"
+	                    android:src="@drawable/affiche_5" />
+	            </RelativeLayout>
+	        
+	            <RelativeLayout
+	                android:layout_width="fill_parent"
+	                android:layout_height="match_parent" >
+	                
+	                <CheckBox
+	                    android:id="@+id/checkBox6"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_alignParentTop="true"
+	                    android:layout_centerHorizontal="true"
+	                    android:text="" />
+	                <ImageView
+	                    android:contentDescription="@string/some_text"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_below="@+id/checkBox6"
+	                    android:layout_alignParentBottom="true"
+	                    android:adjustViewBounds="true"
+	                    android:onClick="viewEvent"
+	                    android:tag="?drawable/affiche_6"
+	                    android:src="@drawable/affiche_6" />
+	            </RelativeLayout>
+	        
+	            <RelativeLayout
+	                android:layout_width="fill_parent"
+	                android:layout_height="match_parent" >
+	                
+	                <CheckBox
+	                    android:id="@+id/checkBox7"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_alignParentTop="true"
+	                    android:layout_centerHorizontal="true"
+	                    android:text="" />
+	                <ImageView
+	                    android:contentDescription="@string/some_text"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_below="@+id/checkBox7"
+	                    android:layout_alignParentBottom="true"
+	                    android:adjustViewBounds="true"
+	                    android:onClick="viewEvent"
+	                    android:tag="?drawable/affiche_7"
+	                    android:src="@drawable/affiche_7" />
+	            </RelativeLayout>
+
+	    </LinearLayout>
+	</HorizontalScrollView>
 
 	<Button
 	    android:id="@+id/comparer"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
 	    android:layout_alignParentBottom="true"
-	    android:layout_alignParentRight="true"
-	    android:text="Comparer" />
+	    android:layout_alignParentEnd="true"
+	    style="@style/BlueButton"
+		android:layout_marginEnd="5dp"
+		android:layout_marginTop="5dp"
+		android:layout_marginBottom="5dp"
+	    android:text="@string/compare" />
 
 </RelativeLayout>
