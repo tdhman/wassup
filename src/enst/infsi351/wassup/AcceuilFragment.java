@@ -1,10 +1,7 @@
 package enst.infsi351.wassup;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,7 +23,7 @@ public class AcceuilFragment extends Fragment implements OnMapReadyCallback{
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-    	Activity b = getActivity();
+    	
         View rootView = inflater.inflate(R.layout.fragment_acceuil, container, false);
         //int i = getArguments().getInt(ARG_FRAGMENT_NUMBER);
         
@@ -57,29 +54,29 @@ public class AcceuilFragment extends Fragment implements OnMapReadyCallback{
 
         map.addMarker(new MarkerOptions()
                 .title("Julien Dore")
-                .snippet("Sam 11 Avr. 20:00 \n Zénith de Paris, Paris, France.\n A partir de 49 €.")
+                .snippet("Sam 11 Avr. 20:00 \n Zï¿½nith de Paris, Paris, France.\n A partir de 49 ï¿½.")
                 .position(Julien_Dore));
         
 
        map.addMarker(new MarkerOptions()
         .title("Julien Dore")
-        .snippet("Sam 11 Avr. 20:00 \n Zénith de Paris.\n A partir de 49 €.")
+        .snippet("Sam 11 Avr. 20:00 \n Zï¿½nith de Paris.\n A partir de 49 ï¿½.")
         .position(Julien_Dore_2));
         map.addMarker(new MarkerOptions()
         .title("Julien Dore")
-        .snippet("Sam 11 Avr. 20:00 \n Zénith de Paris.\n A partir de 49 €.")
+        .snippet("Sam 11 Avr. 20:00 \n Zï¿½nith de Paris.\n A partir de 49 ï¿½.")
         .position(Julien_Dore_3));
         map.addMarker(new MarkerOptions()
         .title("Julien Dore")
-        .snippet("Sam 11 Avr. 20:00 \n Zénith de Paris.\n A partir de 49 €.")
+        .snippet("Sam 11 Avr. 20:00 \n Zï¿½nith de Paris.\n A partir de 49 ï¿½.")
         .position(Julien_Dore_4));
         map.addMarker(new MarkerOptions()
         .title("Julien Dore")
-        .snippet("Sam 11 Avr. 20:00 \n Zénith de Paris.\n A partir de 49 €.")
+        .snippet("Sam 11 Avr. 20:00 \n Zï¿½nith de Paris.\n A partir de 49 ï¿½.")
         .position(Julien_Dore_5));
         map.addMarker(new MarkerOptions()
         .title("Julien Dore")
-        .snippet("Sam 11 Avr. 20:00 \n Zénith de Paris.\n A partir de 49 €.")
+        .snippet("Sam 11 Avr. 20:00 \n Zï¿½nith de Paris.\n A partir de 49 ï¿½.")
         .position(Julien_Dore_6));
     }
 }

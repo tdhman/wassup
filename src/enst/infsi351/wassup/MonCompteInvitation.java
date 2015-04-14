@@ -1,6 +1,5 @@
 package enst.infsi351.wassup;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,7 +12,7 @@ public class MonCompteInvitation extends Fragment {
 	}
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-    	Activity b = getActivity();
+
         View rootView = inflater.inflate(R.layout.invitationevent, container, false);
         //int i = getArguments().getInt(ARG_FRAGMENT_NUMBER);
         

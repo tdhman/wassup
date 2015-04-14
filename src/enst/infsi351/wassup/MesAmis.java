@@ -1,8 +1,5 @@
 package enst.infsi351.wassup;
 
-import com.google.android.gms.maps.MapFragment;
-
-import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,8 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-public class MesAmies extends Fragment{
-	public MesAmies (String tabid){		
+public class MesAmis extends Fragment{
+	public MesAmis (String tabid){		
 		CharSequence text = "Haha!";
 		int duration = Toast.LENGTH_SHORT;
 
@@ -20,7 +17,7 @@ public class MesAmies extends Fragment{
 	}
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-    	Activity b = getActivity();
+    	
         View rootView = inflater.inflate(R.layout.mesamies, container, false);
         //int i = getArguments().getInt(ARG_FRAGMENT_NUMBER);
         

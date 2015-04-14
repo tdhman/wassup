@@ -18,7 +18,7 @@ public class MonCompteFragment extends ActionBarActivity implements OnTabChangeL
 	public static final String TAB_AMIS = "Mes Amis";
 	public static final String TAB_INVI = "Mes";
 	private TabHost myTabHost;
-	private int mCurrentTab;
+	//private int mCurrentTab;
     public MonCompteFragment() {
         // Empty constructor required for fragment subclasses
     }
@@ -98,11 +98,12 @@ public class MonCompteFragment extends ActionBarActivity implements OnTabChangeL
 			return;
 		}
 	}
-	private void updateTab(String tabId, int placeholder) {
+	
+	public void updateTab(String tabId, int placeholder) {
 		FragmentManager fm = getFragmentManager();
 		if (fm.findFragmentByTag(tabId) == null) {
 			fm.beginTransaction()
-					.replace(placeholder, new MesAmies(tabId), tabId)
+					.replace(placeholder, new MesAmis(tabId), tabId)
 					.commit();
 		}
 	}
