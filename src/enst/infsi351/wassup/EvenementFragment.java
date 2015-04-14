@@ -1,7 +1,8 @@
 package enst.infsi351.wassup;
 
 import android.annotation.SuppressLint;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -59,6 +60,13 @@ public class EvenementFragment extends Fragment{
 				Toast.makeText(getActivity(), 
 		    		      "Partager avec les amis - " + imageId, 
 		    		      Toast.LENGTH_LONG).show();
+				Fragment fragment = new InvitationFragment();
+	   	        Bundle args = new Bundle();
+	   	        args.putInt(EvenementFragment.ARG_FRAGMENT_NUMBER, imageId);
+	   	        fragment.setArguments(args);
+	   	
+	   	        FragmentManager fragmentManager = getFragmentManager();
+	   	        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("invitation").commit();
 			}
 		}); 
         

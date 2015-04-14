@@ -13,17 +13,22 @@ The MainActivity class have already defined the leftmenu as ListView and main co
 
 Below is the list of tasks with their corresponding class and layout:
 - *Acceuil*: AcceuilFragment + fragment_acceuil
-- *Mes Evenements*: MesEvenementsFragment + fragment_mes_evenements
+- *Mes Evenements*: MesEvenementsFragment + activity_screen_slide + fragment_screen_slide_page
 - *Mes Invitations*: MesInvitationsFragment + fragment_mes_invitation
 - *Mes Notification*: MesNotificationsFragment + fragment_mes_notifications
 - *Mon Compte*: MonCompteFragment + fragment_mon_compte
+- *Invitation*: InvitationFragment + fragment_invitation
 
-However, for Avanced Search task, we can use Activity to implement it ( because it has multilple screen steps but i am not sure) so you should decide it by yourself! In MainActivity, the Advanced Search is in ActionBar of rightmenu and i have added "TODO" comment to mark the section of where you can put your Activity/Fragment call.
+However, for Advanced Search task, we can use Activity to implement it ( because it has multilple screen steps but i am not sure) so you should decide it by yourself! In MainActivity, the Advanced Search is in ActionBar of rightmenu and i have added "TODO" comment to mark the section of where you can put your Activity/Fragment call. Beside, for the sliding screen effect in Advanced Search, I suggest to use ViewPager as I did for Mes Evenements.
 
-## Finised tasks
+## Finished tasks
 - *Mes Evenements*: MesEvenementsFragment + fragment_mes_evenements
 - *Evenement*: EvenementFragment + fragment_evenement
+- *Mes Invitations*: MesInvitationsFragment + fragment_mes_invitations + fragment_list_item
+- *Invitation*: InvitationFragment + fragment_invitation
 
 ## Screenshots
 ![Mes Evenements](https://github.com/tdhman/wassup/blob/master/Screenshots/evenement.jpg "Mes Evenements")
 ![Evenement](https://github.com/tdhman/wassup/blob/master/Screenshots/mes_evenements.jpg "Evenement")
+![Mes Invitations](https://github.com/tdhman/wassup/blob/master/Screenshots/mes_invitations.jpg "Mes Invitations")
+![Invitation](https://github.com/tdhman/wassup/blob/master/Screenshots/invitation.jpg "Invitation")

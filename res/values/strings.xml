@@ -11,24 +11,34 @@
     <string name="date_example">Sam 4 avril 2015\n10:00 am\nà\nLun 6 avril 2015\n10:00pm</string>
     <string name="friends">Participants</string>
     <string name="question">Voulez-vous y participer?</string>
-    <string name="answer_yes">Participez-vous</string>
+    <string name="answer_yes">Je participe!</string>
     <string name="answer_friend">Proposez aux amis</string>
     <string name="info">Info pratique</string>
     <string name="description">\n- Pour cette évenement, vous pouvez&#8230;\n- Quelques lignes de description, etc.</string>
     <string name="page_indicator">Page Indicator</string>
     <string name="search_friend">Inviter les amis</string>
     <string name="added_friends">Amis ajoutés:</string>
-    
+    <string name="send">Envoyer</string>
+    <string name="accept">Accepter</string>
+    <string name="refuse">Refuser</string>
+    <string name="refuse_text">Saisir un message</string>
+
     <string-array name="menu_array">
         <item>Acceuil</item>
         <item>Mes Evénements</item>
-        <item>Mes invitations</item>
-        <item>Mes notifications</item>
+        <item>Mes Invitations</item>
+        <item>Mes Notifications</item>
         <item>Mon Compte</item>
         <item>Aide?</item>
         <item>Déconnectez-vous</item>
         <item>A propos</item>
     </string-array>
+    
+    <string-array name="invite_array">
+        <item>Accepté</item>
+        <item>Refusé</item>
+    </string-array>
+
     <string name="action_search">Recheche avancée</string>
     <string name="action_filter">Filtrage</string>
     <string name="event">Evénement</string>
@@ -36,5 +46,8 @@
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="app_not_available">Sorry, there\'s no web browser available</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

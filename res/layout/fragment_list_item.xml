@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="6dip">
+    
+    <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="6dip"
+            android:contentDescription="@string/some_text"
+            android:src="@drawable/affiche_1" />
+
+	    <LinearLayout
+	        android:id="@+id/content"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentEnd="true"
+	        android:layout_below="@+id/firstLine"
+	        android:layout_toEndOf="@+id/imageView"
+	        android:orientation="vertical" >
+	        
+	        <TextView
+		        android:id="@+id/secondLine"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:ellipsize="marquee"
+		        android:singleLine="true"
+		        android:text="@string/some_text"
+		        android:textSize="12sp" />
+
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="end" >
+	            <Button
+			        android:id="@+id/btnAccept"
+			        style="@style/BlueButton"
+			        android:layout_marginEnd="5dp"
+			        android:layout_marginTop="5dp"
+			        android:focusable="false"
+			        android:text="@string/accept" />
+	            
+	            <Button
+			        android:id="@+id/btnRefuse"
+			        style="@style/GrayButton"
+			        android:layout_marginEnd="5dp"
+			        android:layout_marginTop="5dp"
+			        android:focusable="false"
+			        android:text="@string/refuse" />
+	            
+	            <Spinner
+			        android:id="@+id/spinner"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginEnd="5dp"
+			        android:layout_marginTop="5dp"
+			        android:focusable="false"
+			        android:visibility="gone"
+			         />
+	            
+	        </LinearLayout>
+	    
+	    </LinearLayout>
+	    
+	    <TextView
+	        android:id="@+id/firstLine"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentEnd="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_alignWithParentIfMissing="true"
+	        android:layout_toEndOf="@id/imageView"
+	        android:gravity="center_vertical"
+	        android:text="@string/some_text"
+	        android:textSize="16sp" />
+	    
+	    <EditText
+			android:id="@+id/refuseText"
+			android:labelFor="@+id/btnRefuse"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentEnd="true"
+	        android:layout_alignParentBottom="true"
+			android:layout_toEndOf="@id/imageView"
+			android:layout_below="@+id/content"
+			android:layout_gravity="center_horizontal"
+			android:layout_marginEnd="5dp"
+			android:layout_marginTop="5dp"
+			android:padding="5dp"
+			android:background="@drawable/custom_edittext"
+			android:gravity="top"
+			android:inputType="text"
+			android:imeOptions="actionDone"
+			android:hint="@string/refuse_text"
+			android:visibility="gone"
+			android:ems="10" >
+	        <requestFocus/>
+		</EditText>
+
+</RelativeLayout>

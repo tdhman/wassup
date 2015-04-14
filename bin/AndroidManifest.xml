@@ -25,16 +25,17 @@
         android:largeHeap="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="enst.infsi351.wassup.MainActivity"
+            android:name=".MainActivity"
+            android:windowSoftInputMode="adjustPan"
             android:label="@string/app_name" >
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <activity
-            android:name="enst.infsi351.wassup.MesEvenementsFragment"
+            android:name=".MesEvenementsFragment"
             android:label="@string/app_name" >
 
             <!-- The meta-data element is needed for versions lower than 4.1 -->
@@ -43,11 +44,23 @@
                 android:value="enst.infsi351.wassup.MainActivity" />
         </activity>
         <activity
+<<<<<<< HEAD
             android:name="enst.infsi351.wassup.MonCompteFragment"
             android:label="@string/app_name">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="enst.infsi351.wassup.MainActivity" />
+=======
+            android:name=".SplashScreenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+>>>>>>> master
         </activity>
 
         <meta-data

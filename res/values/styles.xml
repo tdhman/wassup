@@ -17,6 +17,7 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="android:actionBarStyle">@style/MyActionBar</item>
         <item name="android:popupMenuStyle">@style/MyActionBar.PopupMenu</item>
+        <item name="android:spinnerDropDownItemStyle">@style/MySpinnerItemStyle</item>
         <item name="android:textViewStyle">@style/TextViewStyle</item>
     	<item name="android:buttonStyle">@style/ButtonStyle</item>
     	<item name="android:windowActionBar">true</item>
@@ -24,6 +25,7 @@
         <item name="actionBarStyle">@style/MyActionBar</item>
         <item name="popupMenuStyle">@style/MyActionBar.PopupMenu</item>
         <item name="windowActionBar">true</item>
+        <item name="spinnerDropDownItemStyle">@style/MySpinnerItemStyle</item>
     </style>
     
     <!-- ActionBar styles -->
@@ -41,6 +43,11 @@
         <item name="android:dropDownSelector">@color/twitter_blue</item>
     </style>
     
+	<!-- Spinner styles -->
+	<style name="MySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+    	<item name="android:textColor">@color/vimeo_green</item>
+    </style>
+    
 	<!-- Font styles -->
 	<style name="TextViewStyle" parent="@android:style/Widget.TextView">
    		<item name="android:fontFamily">sans-serif-light</item>
@@ -48,6 +55,27 @@
 
 	<style name="ButtonStyle" parent="@android:style/Widget.Holo.Button">
     	<item name="android:fontFamily">sans-serif-light</item>
+	</style>
+	
+	<style name="BlueButton" parent="@android:style/Widget.Button.Small">
+	  <item name="android:layout_height">32dp</item>
+	  <item name="android:layout_width">wrap_content</item>
+	  <item name="android:background">@color/foursquare_blue</item>
+	  <item name="android:textColor">@color/white_bg</item>
+	</style>
+	
+	<style name="GreenButton" parent="@android:style/Widget.Button.Small">
+	  <item name="android:layout_height">32dp</item>
+	  <item name="android:layout_width">wrap_content</item>
+	  <item name="android:background">@color/vimeo_green</item>
+	  <item name="android:textColor">@color/white_bg</item>
+	</style>
+	
+	<style name="GrayButton" parent="@android:style/Widget.Button.Small">
+	  <item name="android:layout_height">32dp</item>
+	  <item name="android:layout_width">wrap_content</item>
+	  <item name="android:background">@color/gray</item>
+	  <item name="android:textColor">@color/white_bg</item>
 	</style>
 
 </resources>

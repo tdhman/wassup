@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/content_frame"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-<ScrollView 
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/content"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
@@ -29,14 +25,6 @@
 	            android:contentDescription="@string/some_text"
 	            android:scaleType="centerCrop"
 	            android:src="@drawable/affiche_1" />
-	        
-	        <Button
-	            android:id="@+id/shareBtn"
-	            style="?android:attr/buttonStyleSmall"
-	            android:layout_width="54dp"
-	            android:layout_height="54dp"
-	            android:background="@drawable/add_friends"
-	            android:textColor="@color/white_bg" />
 
 		</FrameLayout>
         
@@ -122,4 +110,3 @@
         
     </LinearLayout>
 </ScrollView>
-</FrameLayout>
