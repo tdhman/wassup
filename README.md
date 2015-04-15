@@ -10,10 +10,8 @@ Import this lib folder into Eclipse, then in Wassup project's properties, select
 After adding Google Play Service, to activate Googla Maps to work with your Eclipse, go to https://console.developers.google.com to create new project called "Wassup". Then go to APIs tab to enable Google Maps Android API v2. Next, go to Credentials tab, create new Public API key by coping the following key to Android Application Key: ** AA:F0:2D:04:54:59:B8:5C:FE:FF:9F:20:4A:33:B8:A7:C6:C0:B9:A8;enst.infsi351.wassup**
 Click OK and then you will have a new API Key for Android.
 Copy this key and go back to your Eclipse, edit AndroidManifest.xml and change the following key to your API key:
-
-<meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="<Your API Key>" />
+            android:value="<Your API Key>"
 
 Then, modify the library project's .properties: change **target=android-19** to **target=android-21**
 
