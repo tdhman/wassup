@@ -96,7 +96,7 @@ public class AcceuilFragment extends Fragment {
 			    		      Toast.LENGTH_LONG).show();
 				}
 			});
-        	
+        	//MapsInitializer.initialize(getActivity());
         	SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
             if (mapFragment != null){
             	map = mapFragment.getMap();
@@ -128,6 +128,16 @@ public class AcceuilFragment extends Fragment {
         if (f != null) 
             getFragmentManager().beginTransaction().remove(f).commit();
     }
+    
+    @Override
+	public void onResume() {
+		super.onResume();
+//		if (map == null)
+//			map = ((SupportMapFragment)getChildFragmentManager().findFragmentById(R.id.map)).getMap();
+//		
+//		initMarkers();
+		//plotMarkers(mMyMarkersArray, inflater, container);
+	}
     
     public class MarkerInfoWindowAdapter implements InfoWindowAdapter {
     	
