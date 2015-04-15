@@ -31,7 +31,7 @@
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:layout_below="@+id/map"
-	    android:layout_above="@+id/comparer"
+	    android:layout_above="@+id/btnComparer"
 	    android:fillViewport="true"
 	    android:measureAllChildren="false"
 	    android:scrollbars="horizontal" >
@@ -52,6 +52,8 @@
 	                    android:layout_height="wrap_content"
 	                    android:layout_alignParentTop="true"
 	                    android:layout_centerHorizontal="true"
+	                    android:onClick="onCheckboxClicked"
+	                    android:tag="?drawable/affiche_1"
 	                    android:text="" />
 					<ImageView
 					    android:contentDescription="@string/some_text"
@@ -78,6 +80,8 @@
 	                    android:layout_height="wrap_content"
 	                    android:layout_alignParentTop="true"
 	                    android:layout_centerHorizontal="true"
+	                    android:onClick="onCheckboxClicked"
+	                    android:tag="?drawable/affiche_2"
 	                    android:text="" />
 	                <ImageView
 	                    android:contentDescription="@string/some_text"
@@ -103,6 +107,8 @@
 	                    android:layout_height="wrap_content"
 	                    android:layout_alignParentTop="true"
 	                    android:layout_centerHorizontal="true"
+	                    android:onClick="onCheckboxClicked"
+	                    android:tag="?drawable/affiche_3"
 	                    android:text="" />
 	                <ImageView
 	                    android:contentDescription="@string/some_text"
@@ -127,6 +133,8 @@
 	                    android:layout_height="wrap_content"
 	                    android:layout_alignParentTop="true"
 	                    android:layout_centerHorizontal="true"
+	                    android:onClick="onCheckboxClicked"
+	                    android:tag="?drawable/affiche_4"
 	                    android:text="" />
 	                <ImageView
 	                    android:contentDescription="@string/some_text"
@@ -151,6 +159,8 @@
 	                    android:layout_height="wrap_content"
 	                    android:layout_alignParentTop="true"
 	                    android:layout_centerHorizontal="true"
+	                    android:onClick="onCheckboxClicked"
+	                    android:tag="?drawable/affiche_5"
 	                    android:text="" />
 	                <ImageView
 	                    android:contentDescription="@string/some_text"
@@ -175,6 +185,8 @@
 	                    android:layout_height="wrap_content"
 	                    android:layout_alignParentTop="true"
 	                    android:layout_centerHorizontal="true"
+	                    android:tag="?drawable/affiche_6"
+	                    android:onClick="onCheckboxClicked"
 	                    android:text="" />
 	                <ImageView
 	                    android:contentDescription="@string/some_text"
@@ -199,6 +211,8 @@
 	                    android:layout_height="wrap_content"
 	                    android:layout_alignParentTop="true"
 	                    android:layout_centerHorizontal="true"
+	                    android:tag="?drawable/affiche_7"
+	                    android:onClick="onCheckboxClicked"
 	                    android:text="" />
 	                <ImageView
 	                    android:contentDescription="@string/some_text"
@@ -217,13 +231,11 @@
 	</HorizontalScrollView>
 
 	<Button
-	    android:id="@+id/comparer"
+	    android:id="@+id/btnComparer"
+	    android:layout_width="fill_parent"
 	    android:layout_alignParentBottom="true"
-	    android:layout_alignParentEnd="true"
+	    android:layout_alignParentStart="true"
 	    style="@style/BlueButton"
-		android:layout_marginEnd="5dp"
-		android:layout_marginTop="5dp"
-		android:layout_marginBottom="5dp"
 	    android:text="@string/compare" />
 
 </RelativeLayout>

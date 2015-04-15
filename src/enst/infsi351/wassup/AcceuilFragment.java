@@ -6,7 +6,10 @@ import android.support.v4.app.Fragment;
 import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -35,6 +38,16 @@ public class AcceuilFragment extends Fragment implements OnMapReadyCallback{
     	
         try {
         	rootView = inflater.inflate(R.layout.fragment_acceuil, container, false);
+        	
+        	Button btnComparer = (Button) rootView.findViewById(R.id.btnComparer);
+        	btnComparer.setOnClickListener(new OnClickListener() {				
+				@Override
+				public void onClick(View v) {
+					Toast.makeText(getActivity(), 
+			    		      "Comparer les évenements", 
+			    		      Toast.LENGTH_LONG).show();
+				}
+			});
         	
         	SupportMapFragment mapFragment = (SupportMapFragment) getFragmentManager().findFragmentById(R.id.map);
             if (mapFragment != null)

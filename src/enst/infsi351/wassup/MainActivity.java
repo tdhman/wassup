@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 /**
  * This example illustrates a common usage of the DrawerLayout widget
@@ -145,7 +146,7 @@ public class MainActivity extends ActionBarActivity {
         }
     }
     
-    public void viewEvent(View view) {
+    public void viewEvent(View view){
     	try {
 	    	int imageId = Integer.parseInt(view.getTag().toString().substring(1));
 	    	Fragment fragment = new EvenementFragment();
@@ -155,6 +156,17 @@ public class MainActivity extends ActionBarActivity {
 		    
 		    FragmentManager fragmentManager = getSupportFragmentManager();
 		    fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("evenement").commit();
+    	} catch (NumberFormatException e){
+    		// TODO: handle exception
+    	}
+    }
+    
+    public void onCheckboxClicked(View view){
+    	try {
+	    	int imageId = Integer.parseInt(view.getTag().toString().substring(1));
+	    	Toast.makeText(this, 
+	  		      "Sélectionner l'évenement - " + imageId, 
+	  		      Toast.LENGTH_LONG).show();
     	} catch (NumberFormatException e){
     		// TODO: handle exception
     	}
@@ -255,7 +267,7 @@ public class MainActivity extends ActionBarActivity {
     
     @Override
     public void onBackPressed() {
-    	if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
+    	if (getSupportFragmentManager().getBackStackEntryCount() > 2) {
             getSupportFragmentManager().popBackStack();
         } else {
             super.onBackPressed();
