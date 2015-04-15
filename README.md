@@ -4,6 +4,9 @@ INFSI351
 ## Add project's android dependencies
 Following the instruction here: Adding libraries with resources (http://developer.android.com/tools/support-library/setup.html)
 
+Install Google Play Service using Android SDK Manager. Then go to android-sdk folder and copy lib folder to Eclipse workspace: extras/google/..../google-play-service-lib
+Import this lib folder into Eclipse, then in Wassup project's properties, select Android tab and add this lib project into Wassup. (Similarly to add support library)
+
 Then, modify the library project's .properties: change **target=android-19** to **target=android-21**
 
 ## TODO: Implementation
