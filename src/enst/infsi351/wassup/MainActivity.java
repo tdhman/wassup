@@ -207,7 +207,14 @@ public class MainActivity extends ActionBarActivity {
 	    	}
 	    	case 4:
 	    	{
-	    		startActivity(new Intent(this, MonCompteFragment.class));
+	    		Fragment fragment = new MonCompteFragment();
+	            Bundle args = new Bundle();
+	            args.putInt(MesNotificationsFragment.ARG_FRAGMENT_NUMBER, position);
+	            fragment.setArguments(args);
+	
+	            FragmentManager fragmentManager = getSupportFragmentManager();
+	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("compte").commit();
+	    		break;
 	    	}
 	    	case 5: case 6: case 7: // Aide, déconnexion, à propos
 	    	{
