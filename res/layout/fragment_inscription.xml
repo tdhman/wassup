@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/userTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/username" />
+
+        <EditText
+            android:id="@+id/pwdTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword" />
+
+        <requestFocus />
+
+        <EditText
+            android:id="@+id/pwd2Txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/repassword"
+            android:inputType="textPassword" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/emailTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:hint="@string/email" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/createAccountBtn"
+            style="@style/BlueButton"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/abc_button_padding_horizontal_material"
+            android:text="@string/register"
+            android:textColor="@color/white_bg" />
+
+    </LinearLayout>
+
+</LinearLayout>
