@@ -26,6 +26,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnFocusChangeListener;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -94,6 +95,8 @@ public class RechercheParCarteFragment extends Fragment {
 					if (event==null || !event.isShiftPressed()) {
 						// the user is done typing.
 						nearMe();
+					    InputMethodManager mImMan = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+					    mImMan.hideSoftInputFromWindow(km.getWindowToken(), 0);
 						return true; // consume.
 					}
 				}
