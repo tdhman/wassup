@@ -33,7 +33,6 @@
         <item>Déconnectez-vous</item>
         <item>A propos</item>
     </string-array>
-    
     <string-array name="invite_array">
         <item>Accepté</item>
         <item>Refusé</item>
@@ -49,5 +48,74 @@
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_recherche_avance">RechercheAvanceActivity</string>
+    <string name="event_type">Type</string>
+    <string name="event_date">Date</string>
+    <string name="event_price">Tarif</string>
+    <string name="event_maps">Carte</string>
+    <string name="title_activity_recherce_par_date">RecherceParDateActivity</string>
+    <string name="title_activity_recherche_par_tarif">RechercheParTarifActivity</string>
+    <string name="title_activity_recherche_par_carte">RechercheParCarteActivity</string>
+    <string name="event_search">Chercher</string>
+    <string name="map_ville">Ville</string>
+    <string name="near_you">Autour de moi</string>
+    <string name="unit_map">km(s)</string>
+    <string name="connexion">ou connexion avec</string>
+    <string name="username">Indentifiant</string>
+    <string name="password">Mot de passe</string>
+    <string name="repassword">Confirmation du mot de passe</string>
+    <string name="email">Email</string>
+    <string name="connect">Connexion</string>
+    <string name="register">Inscription</string>
+    <string name="SelectionMode">Mode de sélection</string>
+    <string name="Multiple">Multiple</string>
+    <string name="Range">Gamme</string>
+
+    <string-array name="city_arrays">
+        <item>Paris</item>
+        <item>Melun</item>
+        <item>Versailles</item>
+        <item>Évry</item>
+        <item>Nanterre</item>
+        <item>Bobigny</item>
+        <item>Créteil</item>
+        <item>Pontoise</item>
+    </string-array>
+    <string-array name="city_long">
+        <item>2.352222</item>
+        <item>2.655400</item>
+        <item>2.130122</item>
+        <item>2.441782</item>
+        <item>2.215331</item>
+        <item>2.439712</item>
+        <item>2.455572</item>
+        <item>2.100645</item>
+    </string-array>
+    <string-array name="city_lat">
+        <item>48.856614</item>
+        <item>48.542105</item>
+        <item>48.801408</item>
+        <item>48.629828</item>
+        <item>48.892423</item>
+        <item>48.908612</item>
+        <item>48.790367</item>
+        <item>49.050966</item>
+    </string-array>
+    <string-array name="event_long">
+        <item>2.34407</item>
+        <item>2.35523</item>
+        <item>2.35360</item>
+        <item>2.33248</item>
+        <item>2.34673</item>
+        <item>2.37299</item>
+    </string-array>
+    <string-array name="event_lat">
+        <item>48.83078</item>
+        <item>48.82936</item>
+        <item>48.82688</item>
+        <item>48.81348</item>
+        <item>48.82580</item>
+        <item>48.81597</item>
+    </string-array>
 
 </resources>
