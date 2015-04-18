@@ -226,7 +226,7 @@ public class MainActivity extends ActionBarActivity {
 		            args.putInt(MonCompteFragment.ARG_FRAGMENT_NUMBER, position);
 		            fragment.setArguments(args);
 		
-		            FragmentManager fragmentManager = getFragmentManager();
+		            FragmentManager fragmentManager = getSupportFragmentManager();
 		            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("compte").commit();
 	    		}else{
 		    		Fragment fragment = new ConnextionFragment();
@@ -234,7 +234,7 @@ public class MainActivity extends ActionBarActivity {
 		            args.putInt(MonCompteFragment.ARG_FRAGMENT_NUMBER, position);
 		            fragment.setArguments(args);
 		
-		            FragmentManager fragmentManager = getFragmentManager();
+		            FragmentManager fragmentManager = getSupportFragmentManager();
 		            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("connexion").commit();	    		
 	    		}
 

@@ -892,9 +892,9 @@ int menu activity_main 0x7f0e0000
 int menu main 0x7f0e0001
 int menu splash_screen 0x7f0e0002
 int raw gtm_analytics 0x7f050000
-int string Multiple 0x7f0b0070
-int string Range 0x7f0b0071
-int string SelectionMode 0x7f0b006f
+int string Multiple 0x7f0b0072
+int string Range 0x7f0b0073
+int string SelectionMode 0x7f0b0071
 int string abc_action_bar_home_description 0x7f0b002d
 int string abc_action_bar_home_description_format 0x7f0b0031
 int string abc_action_bar_home_subtitle_description_format 0x7f0b0032
@@ -952,7 +952,7 @@ int string common_signin_button_text 0x7f0b0025
 int string common_signin_button_text_long 0x7f0b0026
 int string commono_google_play_services_api_unavailable_text 0x7f0b0028
 int string compare 0x7f0b004e
-int string connect 0x7f0b006d
+int string connect 0x7f0b006f
 int string connexion 0x7f0b006a
 int string create_calendar_message 0x7f0b000b
 int string create_calendar_title 0x7f0b000a
@@ -966,6 +966,7 @@ int string description 0x7f0b0048
 int string drawer_close 0x7f0b0059
 int string drawer_open 0x7f0b0058
 int string email 0x7f0b0052
+int string email2 0x7f0b006e
 int string event 0x7f0b0056
 int string event_date 0x7f0b0060
 int string event_maps 0x7f0b0062
@@ -985,13 +986,13 @@ int string month_name_format 0x7f0b0002
 int string near_you 0x7f0b0068
 int string notification_badge 0x7f0b0053
 int string page_indicator 0x7f0b0049
-int string password 0x7f0b006b
+int string password 0x7f0b006c
 int string phone 0x7f0b0051
 int string question 0x7f0b0044
 int string refuse 0x7f0b004d
 int string refuse_text 0x7f0b004f
-int string register 0x7f0b006e
-int string repassword 0x7f0b006c
+int string register 0x7f0b0070
+int string repassword 0x7f0b006d
 int string search_friend 0x7f0b004a
 int string send 0x7f0b004c
 int string some_text 0x7f0b003c
@@ -1005,6 +1006,7 @@ int string title_activity_recherche_par_tarif 0x7f0b0064
 int string title_activity_splash_screen 0x7f0b005b
 int string unit_map 0x7f0b0069
 int string username 0x7f0b0050
+int string username2 0x7f0b006b
 int string wallet_buy_button_place_holder 0x7f0b002b
 int style Animation_AppCompat_DropDownUp 0x7f0a00dd
 int style AppBaseTheme 0x7f0a0106
