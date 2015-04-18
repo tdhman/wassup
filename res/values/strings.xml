@@ -123,11 +123,12 @@
         <item>48.81597</item>
     </string-array>
     <string name="addToFavorite">J\'aime</string>
-    <string name="result">résultats</string>
+    <string name="result">Résultats</string>
     <string name="criteria">Critères</string>
     <string-array name="list_criterias">
         <item>trié par Prix</item>
         <item>trié par Distance</item>
     </string-array>
+    <string name="chooseEvent">J\'y vais</string>
 
 </resources>

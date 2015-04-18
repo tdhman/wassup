@@ -240,7 +240,18 @@ public class MainActivity extends ActionBarActivity {
 
 	    		break;
 	    	}
-	    	case 5: case 6: case 7: // Aide, déconnexion, à propos
+	    	case 5:
+	    	{
+	    		Fragment fragment = new ResultatsFragment();
+	            Bundle args = new Bundle();
+	            args.putInt(ResultatsFragment.ARG_FRAGMENT_NUMBER, 8);
+	            fragment.setArguments(args);
+	
+	            FragmentManager fragmentManager = getSupportFragmentManager();
+	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("resultats").commit();
+	    		break;
+	    	}
+	    	case 6: case 7: // Aide, déconnexion, à propos
 	    	{
 	    		break;
 	    	}
