@@ -5,8 +5,9 @@ import com.viewpagerindicator.CirclePageIndicator;
 import com.viewpagerindicator.TitlePageIndicator;
 
 import android.annotation.SuppressLint;
-import android.app.FragmentManager;
+import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.NavUtils;
 import android.support.v4.view.PagerAdapter;
@@ -79,7 +80,14 @@ public class RechercheAvanceActivity extends ActionBarActivity {
 				// TODO Auto-generated method stub
 				//To display the result of searching
 				//Using the activity mes evenement/ resultats
-				Toast.makeText(v.getContext(), "This is the result of searching", Toast.LENGTH_LONG).show();
+//				Toast.makeText(v.getContext(), "This is the result of searching", Toast.LENGTH_LONG).show();
+	    		Fragment fragment = new ResultatsFragment();
+	            Bundle args = new Bundle();
+	            args.putInt(ResultatsFragment.ARG_FRAGMENT_NUMBER, 8);
+	            fragment.setArguments(args);
+	
+	            FragmentManager fragmentManager = getSupportFragmentManager();
+	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("resultats").commit();
 			}
 		});
 	}
@@ -107,7 +115,7 @@ public class RechercheAvanceActivity extends ActionBarActivity {
     @Override
     public void onBackPressed() {
     	System.out.println("back"+mPager.getCurrentItem());
-    	if (!returnBackStackImmediate(getFragmentManager()))
+    	if (!returnBackStackImmediate(getSupportFragmentManager()))
 	        if (mPager.getCurrentItem() == 0) {
 	            // If the user is currently looking at the first step, allow the system to handle the
 	            // Back button. This calls finish() on this activity and pops the back stack.
