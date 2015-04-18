@@ -2,7 +2,7 @@
 INFSI351
 
 ## Add project's android dependencies
-Following the instruction here: Adding libraries with resources (http://developer.android.com/tools/support-library/setup.html)
+Following the instruction here: *Adding libraries with resources* (http://developer.android.com/tools/support-library/setup.html)
 
 Install Google Play Service using Android SDK Manager. Then go to android-sdk folder and copy lib folder to Eclipse workspace: extras/google/..../google-play-service-lib
 Import this lib folder into Eclipse, then in Wassup project's properties, select Android tab and add this lib project into Wassup. (Similarly to add support library)
@@ -14,6 +14,8 @@ Click OK and then you will have a new API Key for Android.
 Copy this key and go back to your Eclipse, edit AndroidManifest.xml and change the following key to your API key:
             android:name="com.google.android.geo.API_KEY"
             android:value="<Your API Key>"
+            
+The project also requires 3 library, you can download at *libs* folder with the compressed file **RankSeekBar_Calendar_ViewPage.zip**. Then we do the same way as **Adding libraries with resources** above, remember that when you import 3 these library, you should have to check as *is library*               
 
 Then, modify the library project's .properties: change **target=android-19** to **target=android-21**
 
@@ -37,6 +39,9 @@ However, for Advanced Search task, we can use Activity to implement it ( because
 - *Evenement*: EvenementFragment + fragment_evenement
 - *Mes Invitations*: MesInvitationsFragment + fragment_mes_invitations + fragment_list_item
 - *Invitation*: InvitationFragment + fragment_invitation
+- *Connexion*: ConnexionFragment + fragment_connexion
+- *Inscription*: InscriptionFragment + fragment_inscription
+- *Recherche Avance*: RechercheAvanceActivity + RechercheParCarteFragment + RechercheDateFragment + RechercheTarifFragment + RechercheTypeFragment with their layout fragments
 
 ## Screenshots
 ![Splash Screen](https://github.com/tdhman/wassup/blob/master/Screenshots/splash_screen.jpg "Splash Screen")
