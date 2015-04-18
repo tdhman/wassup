@@ -16,6 +16,10 @@
     
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
     
     <application
         android:allowBackup="true"
@@ -61,9 +65,16 @@
             android:theme="@android:style/Theme.Black.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        
+    	<activity 
+    	    android:name="enst.infsi351.wassup.MonCompteFragment"
+            android:label="@string/app_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="enst.infsi351.wassup.MainActivity" />
         </activity>
 
         <meta-data
@@ -72,6 +83,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAFXgoXGsbLPRcoB6hQYrpRgVe8JU3wTng" />
+
     </application>
 
 </manifest>

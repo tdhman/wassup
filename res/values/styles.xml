@@ -45,7 +45,7 @@
     
 	<!-- Spinner styles -->
 	<style name="MySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
-    	<item name="android:textColor">@color/vimeo_green</item>
+
     </style>
     
 	<!-- Font styles -->

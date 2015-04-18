@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="15dp" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:contentDescription="@string/some_text"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:padding="5dp"
+            android:src="@drawable/book_avatar" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:contentDescription="@string/some_text"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:padding="5dp"
+            android:src="@drawable/bim_avatar" />
+        
+        <ImageView
+            android:id="@+id/imageView6"
+            android:contentDescription="@string/some_text"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:padding="5dp"
+            android:src="@drawable/robot_avatar" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="15dp" >
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:contentDescription="@string/some_text"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:padding="5dp"
+            android:src="@drawable/growth_avatar" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:contentDescription="@string/some_text"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:padding="5dp"
+            android:src="@drawable/penguin_avatar" />
+        
+        <ImageView
+            android:id="@+id/imageView5"
+            android:contentDescription="@string/some_text"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:padding="5dp"
+            android:src="@drawable/facebook_avatar" />
+    </LinearLayout>
+
+</LinearLayout>
