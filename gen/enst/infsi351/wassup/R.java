@@ -2954,9 +2954,9 @@ containing a value of this type.
         public static final int gtm_analytics=0x7f050000;
     }
     public static final class string {
-        public static final int Multiple=0x7f0b0070;
-        public static final int Range=0x7f0b0071;
-        public static final int SelectionMode=0x7f0b006f;
+        public static final int Multiple=0x7f0b0072;
+        public static final int Range=0x7f0b0073;
+        public static final int SelectionMode=0x7f0b0071;
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
          */
         public static final int abc_action_bar_home_description=0x7f0b002d;
@@ -3131,7 +3131,7 @@ containing a value of this type.
          */
         public static final int commono_google_play_services_api_unavailable_text=0x7f0b0028;
         public static final int compare=0x7f0b004e;
-        public static final int connect=0x7f0b006d;
+        public static final int connect=0x7f0b006f;
         public static final int connexion=0x7f0b006a;
         public static final int create_calendar_message=0x7f0b000b;
         public static final int create_calendar_title=0x7f0b000a;
@@ -3145,6 +3145,7 @@ containing a value of this type.
         public static final int drawer_close=0x7f0b0059;
         public static final int drawer_open=0x7f0b0058;
         public static final int email=0x7f0b0052;
+        public static final int email2=0x7f0b006e;
         public static final int event=0x7f0b0056;
         public static final int event_date=0x7f0b0060;
         public static final int event_maps=0x7f0b0062;
@@ -3164,13 +3165,13 @@ containing a value of this type.
         public static final int near_you=0x7f0b0068;
         public static final int notification_badge=0x7f0b0053;
         public static final int page_indicator=0x7f0b0049;
-        public static final int password=0x7f0b006b;
+        public static final int password=0x7f0b006c;
         public static final int phone=0x7f0b0051;
         public static final int question=0x7f0b0044;
         public static final int refuse=0x7f0b004d;
         public static final int refuse_text=0x7f0b004f;
-        public static final int register=0x7f0b006e;
-        public static final int repassword=0x7f0b006c;
+        public static final int register=0x7f0b0070;
+        public static final int repassword=0x7f0b006d;
         public static final int search_friend=0x7f0b004a;
         public static final int send=0x7f0b004c;
         public static final int some_text=0x7f0b003c;
@@ -3184,6 +3185,7 @@ containing a value of this type.
         public static final int title_activity_splash_screen=0x7f0b005b;
         public static final int unit_map=0x7f0b0069;
         public static final int username=0x7f0b0050;
+        public static final int username2=0x7f0b006b;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */

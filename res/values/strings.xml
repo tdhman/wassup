@@ -66,10 +66,10 @@
     <string name="near_you">Autour de moi</string>
     <string name="unit_map">km(s)</string>
     <string name="connexion">ou connexion avec</string>
-    <string name="username">Indentifiant</string>
+    <string name="username2">Indentifiant</string>
     <string name="password">Mot de passe</string>
     <string name="repassword">Confirmation du mot de passe</string>
-    <string name="email">Email</string>
+    <string name="email2">Email</string>
     <string name="connect">Connexion</string>
     <string name="register">Inscription</string>
     <string name="SelectionMode">Mode de sélection</string>
