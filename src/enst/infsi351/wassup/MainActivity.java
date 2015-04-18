@@ -132,6 +132,7 @@ public class MainActivity extends ActionBarActivity {
             /** TODO:
              * Add new activity for advanced search here!
              */
+        	startActivity(new Intent(this,  RechercheAvanceActivity.class));
             return true;
         default:
             return super.onOptionsItemSelected(item);
@@ -219,13 +220,24 @@ public class MainActivity extends ActionBarActivity {
 	    	}
 	    	case 4:
 	    	{
-	    		Fragment fragment = new MonCompteFragment();
-	            Bundle args = new Bundle();
-	            args.putInt(MesNotificationsFragment.ARG_FRAGMENT_NUMBER, position);
-	            fragment.setArguments(args);
-	
-	            FragmentManager fragmentManager = getSupportFragmentManager();
-	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("compte").commit();
+	    		if (ConnextionFragment.connected){
+		    		Fragment fragment = new MonCompteFragment();
+		            Bundle args = new Bundle();
+		            args.putInt(MonCompteFragment.ARG_FRAGMENT_NUMBER, position);
+		            fragment.setArguments(args);
+		
+		            FragmentManager fragmentManager = getFragmentManager();
+		            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("compte").commit();
+	    		}else{
+		    		Fragment fragment = new ConnextionFragment();
+		            Bundle args = new Bundle();
+		            args.putInt(MonCompteFragment.ARG_FRAGMENT_NUMBER, position);
+		            fragment.setArguments(args);
+		
+		            FragmentManager fragmentManager = getFragmentManager();
+		            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("connexion").commit();	    		
+	    		}
+
 	    		break;
 	    	}
 	    	case 5: case 6: case 7: // Aide, déconnexion, à propos
