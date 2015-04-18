@@ -1,8 +1,8 @@
 package enst.infsi351.wassup;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -13,12 +13,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class ConnextionFragment extends Fragment {
+public class ConnexionFragment extends Fragment {
 	public static final String ARG_FRAGMENT_NUMBER = "connexion_number";
 	public static Boolean connected = false;
 	EditText username, password;
 
-    public ConnextionFragment() {
+    public ConnexionFragment() {
         // Empty constructor required for fragment subclasses
     }
 
@@ -26,8 +26,6 @@ public class ConnextionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_connexion, container, false);
-        int i = getArguments().getInt(ARG_FRAGMENT_NUMBER);
-        String text = getResources().getStringArray(R.array.menu_array)[i];
         
         //validate username and password
         username = (EditText) rootView.findViewById(R.id.usernameTxt);
@@ -75,7 +73,7 @@ public class ConnextionFragment extends Fragment {
 				if (checkValidation()){
 					// TODO Auto-generated method stub
 					//Back to Mon compte
-					ConnextionFragment.connected=true;
+					ConnexionFragment.connected=true;
 					Fragment fragment = new MonCompteFragment();
 		            Bundle args = new Bundle();
 		            args.putInt(MonCompteFragment.ARG_FRAGMENT_NUMBER, 4);

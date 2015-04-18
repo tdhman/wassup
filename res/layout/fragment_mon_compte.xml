@@ -142,7 +142,7 @@
                 android:id="@+id/onglet2"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                layout="@layout/invitationevent" >
+                layout="@layout/settings" >
             </include>	</FrameLayout>
         </LinearLayout>
     </TabHost>

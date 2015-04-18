@@ -7,23 +7,21 @@
     android:orientation="vertical"
     android:padding="@dimen/abc_button_padding_horizontal_material" >
 
-    <CheckBox
-        android:id="@+id/gridItemCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:checked="false"
-        android:gravity="center"
-        android:text="Concert"
-        android:textColor="@color/foursquare_blue"
-        android:textColorLink="@color/foursquare_blue"
-        android:textStyle="bold" />
-
     <ImageView
         android:id="@+id/gridThumbImage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:contentDescription="@string/some_text"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
         android:layout_gravity="center"
         android:padding="5dp"
 		 />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/some_text"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </LinearLayout>

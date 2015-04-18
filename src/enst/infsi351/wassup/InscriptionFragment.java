@@ -1,8 +1,8 @@
 package enst.infsi351.wassup;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -11,7 +11,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class InscriptionFragment extends Fragment {
@@ -135,7 +134,7 @@ public class InscriptionFragment extends Fragment {
 				if (checkValidation()){
 					// TODO Auto-generated method stub
 					//Back to mon compte
-					ConnextionFragment.connected=true;
+					ConnexionFragment.connected=true;
 					Fragment fragment = new MonCompteFragment();
 		            Bundle args = new Bundle();
 		            args.putInt(MonCompteFragment.ARG_FRAGMENT_NUMBER, 4);

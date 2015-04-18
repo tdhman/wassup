@@ -1,5 +1,6 @@
 package enst.infsi351.wassup;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -111,9 +112,7 @@ public class MesEvenementsFragment extends ActionBarActivity {
         // Handle action buttons
         switch(item.getItemId()) {
         case R.id.action_search:
-            /** TODO:
-             * Add new activity for advanced search here!
-             */
+        	startActivity(new Intent(this,  RechercheAvanceActivity.class));
             return true;
         case android.R.id.home: {
         	if (!returnBackStackImmediate(getSupportFragmentManager()))

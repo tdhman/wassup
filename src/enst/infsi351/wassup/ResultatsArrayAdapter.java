@@ -26,7 +26,6 @@ public class ResultatsArrayAdapter extends ArrayAdapter<Integer> {
 		TextView titleText;
 		TextView descriptionText;
 		Button btnAccept;
-		Button btnAddToFavorite;
 	}
 
 	public ResultatsArrayAdapter(Context context, Integer[] images, Integer[] values, Integer[] order, String prefix, String suffix) {
@@ -53,7 +52,6 @@ public class ResultatsArrayAdapter extends ArrayAdapter<Integer> {
 			holder.descriptionText = (TextView) rowView.findViewById(R.id.secondLine);
 			holder.imageView = (ImageView) rowView.findViewById(R.id.imageView);
 			holder.btnAccept = (Button) rowView.findViewById(R.id.btnAccept);
-			holder.btnAddToFavorite = (Button) rowView.findViewById(R.id.btnAddToFavorite);
 			rowView.setTag(holder);
 		} else
 			holder = (ViewHolder) rowView.getTag();
@@ -69,26 +67,15 @@ public class ResultatsArrayAdapter extends ArrayAdapter<Integer> {
 		});
 		holder.titleText.setText(R.string.title);
 		holder.descriptionText.setText(prefix + " " + Integer.toString(values[order[position]]) + " " + suffix);
-//		holder.descriptionText.setText("something");
 		holder.btnAccept.setTag(order[position]);
 		holder.btnAccept.setOnClickListener(new OnClickListener() {			
 			@Override
 			public void onClick(View v) {
 				Toast.makeText(v.getContext(), 
-		    		      "Accepter l'invitation du évenement - " + images[(Integer)v.getTag()], 
+		    		      "Enregistré aux mes événements - " + images[(Integer)v.getTag()], 
 		    		      Toast.LENGTH_LONG).show();
 			}
 		});
-		holder.btnAddToFavorite.setTag(order[position]);
-		holder.btnAddToFavorite.setOnClickListener(new OnClickListener() {			
-			@Override
-			public void onClick(View v) {
-				Toast.makeText(v.getContext(), 
-		    		      "Ajouter aux favoris - " + images[(Integer)v.getTag()], 
-		    		      Toast.LENGTH_LONG).show();
-			}
-		});
-
 
 	    return rowView;
 	}

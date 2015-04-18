@@ -1,7 +1,8 @@
 package enst.infsi351.wassup;
 
-import android.widget.EditText;
 import java.util.regex.Pattern;
+
+import android.widget.EditText;
  
 public class Validation {
  
@@ -12,7 +13,7 @@ public class Validation {
  
     // Error Messages
     private static final String PASS_DONT_MATCH = "confirmed password does not match";
-    private static final String ACCOUNT_EXIST = "account existed";
+    //private static final String ACCOUNT_EXIST = "account existed";
     private static final String REQUIRED_MSG = "required";
     private static final String EMAIL_MSG = "invalid email";
     private static final String PHONE_MSG = "###-#######";

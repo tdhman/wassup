@@ -1,26 +1,20 @@
 package enst.infsi351.wassup;
 
 
-import com.viewpagerindicator.CirclePageIndicator;
-import com.viewpagerindicator.TitlePageIndicator;
-
 import android.annotation.SuppressLint;
-import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.NavUtils;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.viewpagerindicator.CirclePageIndicator;
 
 public class RechercheAvanceActivity extends ActionBarActivity {
 	
@@ -51,11 +45,12 @@ public class RechercheAvanceActivity extends ActionBarActivity {
         
         
       //Bind the title indicator to the adapter
-        CirclePageIndicator circlePageIndicator = (CirclePageIndicator)findViewById(R.id.titles);
+        final CirclePageIndicator circlePageIndicator = (CirclePageIndicator)findViewById(R.id.titles);
         circlePageIndicator.setFillColor(R.color.foursquare_blue);
         circlePageIndicator.setStrokeColor(R.color.gray);
         circlePageIndicator.setStrokeWidth(1);        
         circlePageIndicator.setViewPager(mPager);
+        circlePageIndicator.setVisibility(View.VISIBLE);
         circlePageIndicator.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
@@ -67,20 +62,21 @@ public class RechercheAvanceActivity extends ActionBarActivity {
       //Style of the title
         title = (TextView) findViewById(R.id.step_title);
         title.setTextColor(R.color.foursquare_blue);
+        title.setVisibility(View.VISIBLE);
         
         //set title of the first step
         setTitleByStep(0);
         
       //Get Result of searching
-        Button searchBtn = (Button) this.findViewById(R.id.SearchBtn);
+        final Button searchBtn = (Button) this.findViewById(R.id.SearchBtn);
+        searchBtn.setVisibility(View.VISIBLE);
         searchBtn.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				//To display the result of searching
-				//Using the activity mes evenement/ resultats
-//				Toast.makeText(v.getContext(), "This is the result of searching", Toast.LENGTH_LONG).show();
+				//circlePageIndicator.setVisibility(View.GONE);
+				//searchBtn.setVisibility(View.GONE);
+				//title.setVisibility(View.GONE);
 	    		Fragment fragment = new ResultatsFragment();
 	            Bundle args = new Bundle();
 	            args.putInt(ResultatsFragment.ARG_FRAGMENT_NUMBER, 8);
@@ -100,10 +96,10 @@ public class RechercheAvanceActivity extends ActionBarActivity {
 			case 1:
 				title.setText(R.string.event_date);
 				break;
-			case 2:
+			case 3:
 				title.setText(R.string.event_price);
 				break;
-			case 3:
+			case 2:
 				title.setText(R.string.event_maps);
 				break;
 			default:
@@ -154,9 +150,9 @@ public class RechercheAvanceActivity extends ActionBarActivity {
         			return RechercheAvanceActivity.step1;
         		case 1:
         			return RechercheAvanceActivity.step2;
-        		case 2:
-        			return RechercheAvanceActivity.step3;
         		case 3:
+        			return RechercheAvanceActivity.step3;
+        		case 2:
         			return RechercheAvanceActivity.step4;
         		default:
         			return null;

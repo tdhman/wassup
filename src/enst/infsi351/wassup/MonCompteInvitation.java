@@ -13,7 +13,7 @@ public class MonCompteInvitation extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.invitationevent, container, false);
+        View rootView = inflater.inflate(R.layout.settings, container, false);
         //int i = getArguments().getInt(ARG_FRAGMENT_NUMBER);
         
         //String text = getResources().getStringArray(R.array.menu_array)[i];

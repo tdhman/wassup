@@ -129,9 +129,6 @@ public class MainActivity extends ActionBarActivity {
         // Handle action buttons
         switch(item.getItemId()) {
         case R.id.action_search:
-            /** TODO:
-             * Add new activity for advanced search here!
-             */
         	startActivity(new Intent(this,  RechercheAvanceActivity.class));
             return true;
         default:
@@ -173,10 +170,7 @@ public class MainActivity extends ActionBarActivity {
     	}
     }
 
-    /*** TODO
-     * This function helps to change view between different fragments
-     * @param position = index in left menu
-     */
+
     private void selectItem(int position) {
         // update the main content by replacing fragments
     	switch (position){
@@ -220,7 +214,7 @@ public class MainActivity extends ActionBarActivity {
 	    	}
 	    	case 4:
 	    	{
-	    		if (ConnextionFragment.connected){
+	    		if (ConnexionFragment.connected){
 		    		Fragment fragment = new MonCompteFragment();
 		            Bundle args = new Bundle();
 		            args.putInt(MonCompteFragment.ARG_FRAGMENT_NUMBER, position);
@@ -229,7 +223,7 @@ public class MainActivity extends ActionBarActivity {
 		            FragmentManager fragmentManager = getSupportFragmentManager();
 		            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("compte").commit();
 	    		}else{
-		    		Fragment fragment = new ConnextionFragment();
+		    		Fragment fragment = new ConnexionFragment();
 		            Bundle args = new Bundle();
 		            args.putInt(MonCompteFragment.ARG_FRAGMENT_NUMBER, position);
 		            fragment.setArguments(args);
@@ -240,7 +234,7 @@ public class MainActivity extends ActionBarActivity {
 
 	    		break;
 	    	}
-	    	case 5: case 6: case 7: // Aide, déconnexion, à propos
+	    	case 5: case 6: // Aide, déconnexion, à propos
 	    	{
 	    		break;
 	    	}

@@ -27,6 +27,8 @@
     <string name="phone">06 24 56 12 82</string>
     <string name="email">richard123@gmail.com</string>
     <string name="notification_badge">9</string>
+    <string name="deconnexion">Déconnectez-vous</string>
+    <string name="keyword">Mots-clés</string>
 
     <string-array name="menu_array">
         <item>Acceuil</item>
@@ -35,7 +37,6 @@
         <item>Mes Notifications</item>
         <item>Mon Compte</item>
         <item>Aide?</item>
-        <item>Déconnectez-vous</item>
         <item>A propos</item>
     </string-array>
     <string-array name="invite_array">
@@ -56,7 +57,7 @@
     <string name="title_activity_recherche_avance">RechercheAvanceActivity</string>
     <string name="event_type">Type</string>
     <string name="event_date">Date</string>
-    <string name="event_price">Tarif</string>
+    <string name="event_price">Tarif et Mots-clés</string>
     <string name="event_maps">Carte</string>
     <string name="title_activity_recherce_par_date">RecherceParDateActivity</string>
     <string name="title_activity_recherche_par_tarif">RechercheParTarifActivity</string>

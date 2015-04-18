@@ -1,30 +1,25 @@
 package enst.infsi351.wassup;
 
-import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
-import android.widget.CheckBox;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.Toast;
-import android.app.Application;
 
 public class RechercheTypeFragment extends Fragment {
 	public static final String ARG_FRAGMENT_NUMBER = "recherche_par_type_number";
 
 	GridView gridView;
 
-	static final String[] TYPES = new String[] { "Concert", "Ciné", "Thêatre",
-			"Sport", "Cuisine", "Conférence", "Exposition", "Danse",
-			"Pique-nique", "Fêtes" };
+	static final String[] TYPES = new String[] { "Concert", "Cinéma", "Thêatre",
+			"Sport", "Exposition", "Conférence", "Musique", "Festival" };
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,12 +33,7 @@ public class RechercheTypeFragment extends Fragment {
 
 		gridView.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View v,
-					int position, long id) {
-				Toast.makeText(
-						getActivity().getApplicationContext(),
-						((TextView) v.findViewById(R.id.gridItemCheckBox))
-								.getText(), Toast.LENGTH_SHORT).show();
-
+					int position, long id) {				
 			}
 		});
 		return rootView;
@@ -70,56 +60,53 @@ public class RechercheTypeFragment extends Fragment {
 				gridView = new View(context);
 
 				// get layout
-				gridView = inflater.inflate(R.layout.type_item, null);
+				gridView = inflater.inflate(R.layout.type_item, parent, false); // null
 
 
 			} else {
 				gridView = (View) convertView;
 			}
 
-			// set value into checkbox
-			CheckBox checkBox = (CheckBox) gridView
-					.findViewById(R.id.gridItemCheckBox);
-			checkBox.setText(typeValues[position]);
-
 			// set image based on selected text
-			ImageView imageView = (ImageView) gridView
-					.findViewById(R.id.gridThumbImage);
-			System.out.println("pos " + position);
+			ImageView imageView = (ImageView) gridView.findViewById(R.id.gridThumbImage);
+			
+			TextView textView = (TextView) gridView.findViewById(R.id.textView);
 
 			switch (position) {
 			case 0:
-				imageView.setImageResource(R.drawable.concert);
+				imageView.setImageResource(R.drawable.event_concert);
+				textView.setText("Concert");
 				break;
 			case 1:
-				imageView.setImageResource(R.drawable.movie);
+				imageView.setImageResource(R.drawable.event_cinema);
+				textView.setText("Cinéma");
 				break;
 			case 2:
-				imageView.setImageResource(R.drawable.theatre);
+				imageView.setImageResource(R.drawable.event_theatre);
+				textView.setText("Théatre");
 				break;
 			case 3:
-				imageView.setImageResource(R.drawable.sport);
+				imageView.setImageResource(R.drawable.event_sport);
+				textView.setText("Sport");
 				break;
 			case 4:
-				imageView.setImageResource(R.drawable.cuisine);
+				imageView.setImageResource(R.drawable.event_exposition);
+				textView.setText("Exposition");
 				break;
 			case 5:
-				imageView.setImageResource(R.drawable.conference);
+				imageView.setImageResource(R.drawable.event_business);
+				textView.setText("Conférence");
 				break;
 			case 6:
-				imageView.setImageResource(R.drawable.exhibition);
+				imageView.setImageResource(R.drawable.event_music);
+				textView.setText("Musique");
 				break;
 			case 7:
-				imageView.setImageResource(R.drawable.dance);
-				break;
-			case 8:
-				imageView.setImageResource(R.drawable.picnic);
-				break;
-			case 9:
-				imageView.setImageResource(R.drawable.fetes);
+				imageView.setImageResource(R.drawable.event_festival);
+				textView.setText("Festival");
 				break;
 			default:
-				imageView.setImageResource(R.drawable.concert);
+				imageView.setImageResource(R.drawable.event_concert);
 				break;
 			}
 			return gridView;

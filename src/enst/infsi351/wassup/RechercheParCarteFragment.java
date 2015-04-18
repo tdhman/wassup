@@ -2,7 +2,18 @@ package enst.infsi351.wassup;
 
 import java.util.Random;
 
-import com.google.android.gms.location.LocationListener;
+import android.graphics.Color;
+import android.location.Location;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.Spinner;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -13,31 +24,11 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import android.content.Context;
-import android.graphics.Color;
-import android.location.Criteria;
-import android.location.Location;
-import android.location.LocationManager;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.View.OnFocusChangeListener;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.TextView.OnEditorActionListener;
-
 public class RechercheParCarteFragment extends Fragment {
 	public static final String ARG_FRAGMENT_NUMBER = "recherche_par_carte_number";
 	GoogleMap map;
 	Spinner cityCmb;
-	EditText km;
+	SeekBar km;
 	Circle circle;
 	Boolean detectLocation=false;
 	public String[] CITY_LONGS, CITY_LATS, EVENT_LONGS, EVENT_LATS;
@@ -80,27 +71,24 @@ public class RechercheParCarteFragment extends Fragment {
 		// cityCmb.setSelection(0);
 
 		// to enter the km
-		km = (EditText) rootView.findViewById(R.id.nearMeTxt);
-
-		km.setOnEditorActionListener(new OnEditorActionListener() {
-
+		km = (SeekBar) rootView.findViewById(R.id.nearMeTxt);
+		km.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {			
 			@Override
-			public boolean onEditorAction(TextView v, int actionId,
-					KeyEvent event) {
+			public void onStopTrackingTouch(SeekBar seekBar) {
 				// TODO Auto-generated method stub
-				if (actionId == EditorInfo.IME_ACTION_SEARCH
-						|| actionId == EditorInfo.IME_ACTION_DONE
-						|| event.getAction() == KeyEvent.ACTION_DOWN
-						&& event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
-					if (event==null || !event.isShiftPressed()) {
-						// the user is done typing.
-						nearMe();
-					    InputMethodManager mImMan = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-					    mImMan.hideSoftInputFromWindow(km.getWindowToken(), 0);
-						return true; // consume.
-					}
-				}
-				return false; // pass on to other listeners.
+				nearMe();
+			}
+			
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+				// TODO Auto-generated method stub
+			}
+			
+			@Override
+			public void onProgressChanged(SeekBar seekBar, int progress,
+					boolean fromUser) {
+				// TODO Auto-generated method stub
+				
 			}
 		});
 
@@ -148,7 +136,7 @@ public class RechercheParCarteFragment extends Fragment {
 			// Find the circle with the radius from "near me"
 			// CircleOptions circle=new CircleOptions();
 			// circle.center(_me);
-			double radius = Double.parseDouble(km.getText().toString().trim()) * 1000;
+			double radius = km.getProgress() * 1000;
 			// circle.radius(radius);
 			// map.addCircle(circle);
 			circle = map.addCircle(new CircleOptions().center(_me)

@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                android:hint="@string/username" >
+                android:hint="@string/username2" >
 
                 <requestFocus />
             </EditText>
