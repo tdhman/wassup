@@ -14,5 +14,6 @@
     <color name="list_row_hover_start_color">#d1eef7</color>
     <color name="list_row_hover_end_color">#d1eef7</color>
     <color name="dark_green">#04b404</color>
+    <color name="activated_color">#80bada55</color>
     
 </resources>

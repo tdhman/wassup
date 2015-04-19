@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.InflateException;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;
 import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
+import com.google.android.gms.maps.GoogleMap.OnMyLocationChangeListener;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
@@ -32,6 +34,7 @@ public class AcceuilFragment extends Fragment {
 	
 	private static View rootView;
 	private GoogleMap map;
+	private Location myLocation;
 	private HashMap<Marker, MyMarker> mMarkersHashMap;
     private ArrayList<MyMarker> mMyMarkersArray = new ArrayList<MyMarker>();
 	
@@ -100,14 +103,25 @@ public class AcceuilFragment extends Fragment {
         	SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
             if (mapFragment != null){
             	map = mapFragment.getMap();
+            	//map.setMyLocationEnabled(true);
+            	map.setOnMyLocationChangeListener(new OnMyLocationChangeListener() {
+                    @Override
+                    public void onMyLocationChange(Location arg0) {
+                      myLocation = map.getMyLocation();
+                    }
+                   });
             }
         } catch (InflateException e) {
             /* map is already there, just return view as it is */
         }
         
+        return rootView;
+    }
+    
+    public void setupMap(){
     	if (map != null){
     		initMarkers();
-    		plotMarkers(mMyMarkersArray, inflater, container);
+    		plotMarkers(mMyMarkersArray, getActivity().getLayoutInflater(), null);
     		map.setOnMarkerClickListener(new OnMarkerClickListener() {						
 				@Override
 				public boolean onMarkerClick(Marker marker) {
@@ -117,8 +131,6 @@ public class AcceuilFragment extends Fragment {
 			});
     	} else
             Toast.makeText(getActivity(), "Unable to create Maps", Toast.LENGTH_SHORT).show();
-        
-        return rootView;
     }
     
     @Override
@@ -132,11 +144,12 @@ public class AcceuilFragment extends Fragment {
     @Override
 	public void onResume() {
 		super.onResume();
-//		if (map == null)
-//			map = ((SupportMapFragment)getChildFragmentManager().findFragmentById(R.id.map)).getMap();
-//		
-//		initMarkers();
-		//plotMarkers(mMyMarkersArray, inflater, container);
+		if (map == null){
+			map = ((SupportMapFragment)getChildFragmentManager().findFragmentById(R.id.map)).getMap();
+			//map.setMyLocationEnabled(true);
+			myLocation = map.getMyLocation();
+		}
+		setupMap();
 	}
     
     public class MarkerInfoWindowAdapter implements InfoWindowAdapter {
@@ -175,5 +188,4 @@ public class AcceuilFragment extends Fragment {
     	}
 
     }
-
 }

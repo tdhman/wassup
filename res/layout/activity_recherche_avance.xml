@@ -2,14 +2,14 @@
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/content_frame"
+    android:background="@color/white_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="@dimen/abc_button_padding_horizontal_material">
-        
+        android:orientation="vertical"       
+        android:padding="@dimen/abc_button_padding_horizontal_material">       
 
         <TextView
             android:id="@+id/step_title"
@@ -19,9 +19,6 @@
             android:layout_gravity="center_horizontal"
             android:text="@string/some_text"
             android:textAllCaps="false"
-            android:textColor="@color/foursquare_blue"
-            android:textColorHint="@color/foursquare_blue"
-            android:textColorLink="@color/foursquare_blue"
             android:textSize="@dimen/abc_text_size_headline_material"
             android:textStyle="bold"/>
 

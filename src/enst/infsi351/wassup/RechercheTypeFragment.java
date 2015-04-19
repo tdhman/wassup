@@ -19,7 +19,7 @@ public class RechercheTypeFragment extends Fragment {
 	GridView gridView;
 
 	static final String[] TYPES = new String[] { "Concert", "Cinéma", "Thêatre",
-			"Sport", "Exposition", "Conférence", "Musique", "Festival" };
+			"Sport", "Exposition", "Conférence", "Musique", "Soirée" };
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -28,7 +28,7 @@ public class RechercheTypeFragment extends Fragment {
 				container, false);
 
 		gridView = (GridView) rootView.findViewById(R.id.gridview);
-
+		gridView.setChoiceMode(GridView.CHOICE_MODE_MULTIPLE);
 		gridView.setAdapter(new ImageAdapter(getActivity(), TYPES));
 
 		gridView.setOnItemClickListener(new OnItemClickListener() {
@@ -56,20 +56,16 @@ public class RechercheTypeFragment extends Fragment {
 			View gridView;
 
 			if (convertView == null) {
-
 				gridView = new View(context);
-
 				// get layout
 				gridView = inflater.inflate(R.layout.type_item, parent, false); // null
-
-
 			} else {
 				gridView = (View) convertView;
 			}
 
 			// set image based on selected text
-			ImageView imageView = (ImageView) gridView.findViewById(R.id.gridThumbImage);
-			
+			//LinearLayout layout = (LinearLayout) gridView.findViewById(R.id.content_type);
+			ImageView imageView = (ImageView) gridView.findViewById(R.id.gridThumbImage);			
 			TextView textView = (TextView) gridView.findViewById(R.id.textView);
 
 			switch (position) {
@@ -102,8 +98,8 @@ public class RechercheTypeFragment extends Fragment {
 				textView.setText("Musique");
 				break;
 			case 7:
-				imageView.setImageResource(R.drawable.event_festival);
-				textView.setText("Festival");
+				imageView.setImageResource(R.drawable.event_soiree);
+				textView.setText("Soirée");
 				break;
 			default:
 				imageView.setImageResource(R.drawable.event_concert);
