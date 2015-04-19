@@ -72,18 +72,14 @@ public class AcceuilFragment extends Fragment {
 
                 map.setInfoWindowAdapter(new MarkerInfoWindowAdapter(inflater, container));
             }
-        }
+        } else
+        	Toast.makeText(getActivity(), "Erreur: Impossible de créer markers", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-    	
-//    	if (rootView != null) {
-//            ViewGroup parent = (ViewGroup) rootView.getParent();
-//            if (parent != null)
-//                parent.removeView(rootView);
-//        }
+    	super.onCreateView(inflater, container, savedInstanceState);
     	
         try {
         	rootView = inflater.inflate(R.layout.fragment_acceuil, container, false);
@@ -117,8 +113,10 @@ public class AcceuilFragment extends Fragment {
     
     public void setupMap(){
     	if (map != null){
-    		initMarkers();
-    		plotMarkers(mMyMarkersArray, getActivity().getLayoutInflater(), null);
+    		if (mMyMarkersArray.isEmpty())
+    			initMarkers();
+    		if (mMarkersHashMap.isEmpty())
+    			plotMarkers(mMyMarkersArray, getActivity().getLayoutInflater(), null);
     		map.setOnMarkerClickListener(new OnMarkerClickListener() {						
 				@Override
 				public boolean onMarkerClick(Marker marker) {
@@ -143,6 +141,7 @@ public class AcceuilFragment extends Fragment {
 		super.onResume();
 		if (map == null){
 			map = ((SupportMapFragment)getChildFragmentManager().findFragmentById(R.id.map)).getMap();
+			Toast.makeText(getActivity(), "ok", Toast.LENGTH_SHORT).show();
 			//map.setMyLocationEnabled(true);
 		}
 		setupMap();
