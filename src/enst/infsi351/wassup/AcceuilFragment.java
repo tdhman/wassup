@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,13 +44,13 @@ public class AcceuilFragment extends Fragment {
     	// Initialize the HashMap for Markers and MyMarker object
         mMarkersHashMap = new HashMap<Marker, MyMarker>();
         
-        mMyMarkersArray.add(new MyMarker("Brasil", R.drawable.affiche_1, Double.parseDouble("-28.5971788"), Double.parseDouble("-52.7309824")));
-        mMyMarkersArray.add(new MyMarker("United States", R.drawable.affiche_2, Double.parseDouble("33.7266622"), Double.parseDouble("-87.1469829")));
-        mMyMarkersArray.add(new MyMarker("Canada", R.drawable.affiche_3, Double.parseDouble("51.8917773"), Double.parseDouble("-86.0922954")));
-        mMyMarkersArray.add(new MyMarker("England", R.drawable.affiche_4, Double.parseDouble("52.4435047"), Double.parseDouble("-3.4199249")));
-        mMyMarkersArray.add(new MyMarker("España", R.drawable.affiche_5, Double.parseDouble("41.8728262"), Double.parseDouble("-0.2375882")));
-        mMyMarkersArray.add(new MyMarker("Portugal", R.drawable.affiche_6, Double.parseDouble("40.8316649"), Double.parseDouble("-4.936009")));
-        mMyMarkersArray.add(new MyMarker("Deutschland", R.drawable.affiche_7, Double.parseDouble("51.1642292"), Double.parseDouble("10.4541194")));
+        mMyMarkersArray.add(new MyMarker("Evénement 1", R.drawable.affiche_1, Double.parseDouble("-28.5971788"), Double.parseDouble("-52.7309824")));
+        mMyMarkersArray.add(new MyMarker("Evénement 2", R.drawable.affiche_2, Double.parseDouble("33.7266622"), Double.parseDouble("-87.1469829")));
+        mMyMarkersArray.add(new MyMarker("Evénement 3", R.drawable.affiche_3, Double.parseDouble("51.8917773"), Double.parseDouble("-86.0922954")));
+        mMyMarkersArray.add(new MyMarker("Evénement 4", R.drawable.affiche_4, Double.parseDouble("52.4435047"), Double.parseDouble("-3.4199249")));
+        mMyMarkersArray.add(new MyMarker("Evénement 5", R.drawable.affiche_5, Double.parseDouble("41.8728262"), Double.parseDouble("-0.2375882")));
+        mMyMarkersArray.add(new MyMarker("Evénement 6", R.drawable.affiche_6, Double.parseDouble("40.8316649"), Double.parseDouble("-4.936009")));
+        mMyMarkersArray.add(new MyMarker("Evénement 7", R.drawable.affiche_7, Double.parseDouble("51.1642292"), Double.parseDouble("10.4541194")));
     }
     
     private void plotMarkers(ArrayList<MyMarker> markers, LayoutInflater inflater, ViewGroup container)
@@ -78,11 +79,11 @@ public class AcceuilFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
     	
-    	if (rootView != null) {
-            ViewGroup parent = (ViewGroup) rootView.getParent();
-            if (parent != null)
-                parent.removeView(rootView);
-        }
+//    	if (rootView != null) {
+//            ViewGroup parent = (ViewGroup) rootView.getParent();
+//            if (parent != null)
+//                parent.removeView(rootView);
+//        }
     	
         try {
         	rootView = inflater.inflate(R.layout.fragment_acceuil, container, false);
@@ -91,9 +92,14 @@ public class AcceuilFragment extends Fragment {
         	btnComparer.setOnClickListener(new OnClickListener() {				
 				@Override
 				public void onClick(View v) {
-					Toast.makeText(getActivity(), 
-			    		      "Comparer les évenements", 
-			    		      Toast.LENGTH_LONG).show();
+					Toast.makeText(getActivity(), "Comparer les évenements", Toast.LENGTH_LONG).show();
+					Fragment fragment = new ResultatsFragment();
+		            Bundle args = new Bundle();
+		            args.putInt(ResultatsFragment.ARG_FRAGMENT_NUMBER, 8);
+		            fragment.setArguments(args);
+		
+		            FragmentManager fragmentManager = getFragmentManager();
+		            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("comparaison").commit();
 				}
 			});
         	//MapsInitializer.initialize(getActivity());
@@ -163,16 +169,24 @@ public class AcceuilFragment extends Fragment {
     	@Override
     	public View getInfoWindow(Marker marker) {
     		View v  = inflater.inflate(R.layout.infowindow_layout, container, false);
+            
+    		MyMarker myMarker = mMarkersHashMap.get(marker);
 
-            MyMarker myMarker = mMarkersHashMap.get(marker);
-
-            ImageView markerIcon = (ImageView) v.findViewById(R.id.marker_icon);
+            ImageView markerIcon = (ImageView)v.findViewById(R.id.marker_icon);
 
             TextView markerLabel = (TextView)v.findViewById(R.id.marker_label);
+            
+            TextView snippet = (TextView)v.findViewById(R.id.snippet);
 
-            markerIcon.setImageResource(myMarker.getmIcon());
-
-            markerLabel.setText(myMarker.getmLabel());
+            if (myMarker == null){
+            	markerIcon.setImageResource(R.drawable.affiche_1);
+                markerLabel.setText("Titre du evénement");
+            } else {
+	            markerIcon.setImageResource(myMarker.getmIcon());
+	            markerLabel.setText(myMarker.getmLabel());
+            }
+            
+            snippet.setText("Date: 12/04/2015\nPrix: Gratuit");
 
             return v;
     	}
