@@ -15,7 +15,7 @@ public class MonCompteFragment extends Fragment implements OnTabChangeListener{
 	public static final String ARG_FRAGMENT_NUMBER = "compte_number";
 	private static final String TAG = "FragmentTabs";
 	public static final String TAB_AMIS = "Mes Amis";
-	public static final String TAB_INVI = "Chercher Amis";
+	public static final String TAB_SETTINGS = "Settings";
 	private TabHost myTabHost;
 
     public MonCompteFragment() {
@@ -30,7 +30,7 @@ public class MonCompteFragment extends Fragment implements OnTabChangeListener{
         myTabHost =(TabHost) rootView.findViewById(R.id.tabhost);
         myTabHost.setup();
         myTabHost.addTab(myTabHost.newTabSpec("Mes Amis").setIndicator("Mes Amis",getResources().getDrawable(android.R.drawable.ic_menu_edit)).setContent(R.id.onglet1));
-        myTabHost.addTab(myTabHost.newTabSpec("Mes").setIndicator("A venir",getResources().getDrawable(android.R.drawable.ic_menu_edit)).setContent(R.id.onglet2));
+        myTabHost.addTab(myTabHost.newTabSpec("Settings").setIndicator("Settings",getResources().getDrawable(android.R.drawable.ic_menu_edit)).setContent(R.id.onglet2));
       
         myTabHost.setOnTabChangedListener(this);
         
@@ -101,7 +101,7 @@ public class MonCompteFragment extends Fragment implements OnTabChangeListener{
 			myTabHost.setCurrentTab(0);
 			return;
 		}
-		if (MonCompteFragment.TAB_INVI.equals(tabId)) {			
+		if (MonCompteFragment.TAB_SETTINGS.equals(tabId)) {			
 			
 			myTabHost.setCurrentTab(1);
 			return;

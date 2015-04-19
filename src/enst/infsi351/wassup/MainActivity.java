@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentManager.BackStackEntry;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -284,8 +285,14 @@ public class MainActivity extends ActionBarActivity {
     
     @Override
     public void onBackPressed() {
-    	if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
-            getSupportFragmentManager().popBackStack();
+    	if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+    		int count = getSupportFragmentManager().getBackStackEntryCount();
+    		BackStackEntry backEntry= getSupportFragmentManager().getBackStackEntryAt(count-1);
+
+    	    if (backEntry.getName() == "acceuil"){
+    	    	finish();
+    	    } else
+    	    	getSupportFragmentManager().popBackStack();
         } else {
             super.onBackPressed();
         }

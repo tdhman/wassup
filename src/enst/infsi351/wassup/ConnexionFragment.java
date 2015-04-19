@@ -1,5 +1,6 @@
 package enst.infsi351.wassup;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -8,6 +9,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
@@ -71,8 +73,8 @@ public class ConnexionFragment extends Fragment {
 			public void onClick(View v) {
 				//Validation the form
 				if (checkValidation()){
-					// TODO Auto-generated method stub
 					//Back to Mon compte
+					showOrHideSoftKeyboard(v, false);
 					ConnexionFragment.connected=true;
 					Fragment fragment = new MonCompteFragment();
 		            Bundle args = new Bundle();
@@ -93,8 +95,6 @@ public class ConnexionFragment extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-				System.out.println("dang ky");
-				// TODO Auto-generated method stub
 				// Go to registration page
 	    		Fragment fragment = new InscriptionFragment();	
 	            
@@ -115,4 +115,11 @@ public class ConnexionFragment extends Fragment {
         return ret;
     }
     
+    public void showOrHideSoftKeyboard(View view, boolean show) {
+	    InputMethodManager inputMethodManager = (InputMethodManager) view.getContext().getSystemService(Activity.INPUT_METHOD_SERVICE);
+	    if(show)
+	    	inputMethodManager.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
+	    else
+	    	inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+	}
 }

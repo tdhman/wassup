@@ -9,7 +9,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"        
         rsb:absoluteMinValue="0"
-        rsb:absoluteMaxValue="1000"/>
+        rsb:absoluteMaxValue="500"/>
 
     <MultiAutoCompleteTextView
 	        android:id="@+id/multiAutoCompleteTextView"

@@ -3,12 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" 
+    android:background="@color/white_bg"
     android:padding="20dp"
     >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="0.70"
         android:orientation="vertical" >
 
@@ -21,6 +22,7 @@
             android:weightSum="3" >
 
             <ImageButton
+                android:contentDescription="@string/some_text"
                 android:id="@+id/imageButton1"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
@@ -31,6 +33,7 @@
                 android:src="@drawable/facebook" />
 
             <ImageButton
+                android:contentDescription="@string/some_text"
                 android:id="@+id/imageButton2"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
@@ -41,6 +44,7 @@
                 android:src="@drawable/twitter" />
 
             <ImageButton
+                android:contentDescription="@string/some_text"
                 android:id="@+id/imageButton3"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
