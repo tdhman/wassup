@@ -26,6 +26,7 @@ public class ResultatsArrayAdapter extends ArrayAdapter<Integer> {
 		TextView titleText;
 		TextView descriptionText;
 		Button btnAccept;
+		TextView resultText;
 	}
 
 	public ResultatsArrayAdapter(Context context, Integer[] images, Integer[] values, Integer[] order, String prefix, String suffix) {
@@ -42,7 +43,7 @@ public class ResultatsArrayAdapter extends ArrayAdapter<Integer> {
 	public View getView(int position, View convertView, ViewGroup container) {
 		
 		View rowView = convertView;
-		ViewHolder holder = null;
+		final ViewHolder holder;
 		
 		if(rowView == null){
 			LayoutInflater mLayoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -50,6 +51,7 @@ public class ResultatsArrayAdapter extends ArrayAdapter<Integer> {
 			holder = new ViewHolder();
 			holder.titleText = (TextView) rowView.findViewById(R.id.firstLine);
 			holder.descriptionText = (TextView) rowView.findViewById(R.id.secondLine);
+			holder.resultText = (TextView) rowView.findViewById(R.id.textResult);
 			holder.imageView = (ImageView) rowView.findViewById(R.id.imageView);
 			holder.btnAccept = (Button) rowView.findViewById(R.id.btnAccept);
 			rowView.setTag(holder);
@@ -71,6 +73,8 @@ public class ResultatsArrayAdapter extends ArrayAdapter<Integer> {
 		holder.btnAccept.setOnClickListener(new OnClickListener() {			
 			@Override
 			public void onClick(View v) {
+				holder.btnAccept.setVisibility(View.GONE);
+				holder.resultText.setVisibility(View.VISIBLE);
 				Toast.makeText(v.getContext(), 
 		    		      "Enregistré aux mes événements - " + images[(Integer)v.getTag()], 
 		    		      Toast.LENGTH_LONG).show();

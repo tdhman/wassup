@@ -43,11 +43,12 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" 
         android:background="@color/white_bg"
+        android:weightSum="1"
         android:stretchColumns="*">
 
         <TableRow
             android:id="@+id/tableRow1"
-            android:layout_width="fill_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="#BDBDBD" >
 
@@ -73,7 +74,7 @@
 
         <TableRow
             android:id="@+id/tableRow2"
-            android:layout_width="fill_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content">
 
             <TextView
@@ -96,7 +97,7 @@
 
         <TableRow
             android:id="@+id/tableRow3"
-            android:layout_width="fill_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content">
 
 	        <Button

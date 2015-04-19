@@ -46,6 +46,17 @@
     				android:paddingLeft="5dp"
 			        android:focusable="false"
 			        android:text="@string/answer_yes" />
+	            
+	            <TextView
+		            android:id="@+id/textResult"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginEnd="5dp"
+			        android:layout_marginTop="5dp"
+		            android:drawableStart="@drawable/green_check"
+		            android:text="@string/checked"
+		            android:visibility="gone"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
 	           
 	        </LinearLayout>
 	    

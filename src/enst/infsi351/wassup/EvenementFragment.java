@@ -3,6 +3,7 @@ package enst.infsi351.wassup;
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -43,10 +44,12 @@ public class EvenementFragment extends Fragment{
         animText.setRepeatCount(Animation.INFINITE);
         title.startAnimation(animText);
         
-        Button favoriteBtn = (Button) rootView.findViewById(R.id.favoriteBtn);
+        final Button favoriteBtn = (Button) rootView.findViewById(R.id.favoriteBtn);
         favoriteBtn.setOnClickListener(new OnClickListener() {			
 			@Override
 			public void onClick(View v) {
+				favoriteBtn.setBackgroundColor(Color.GRAY);
+				favoriteBtn.setEnabled(false);
 				Toast.makeText(getActivity(), 
 		    		      "Enregistré aux mes évenements - " + imageId, 
 		    		      Toast.LENGTH_LONG).show();
