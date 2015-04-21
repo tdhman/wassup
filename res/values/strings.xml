@@ -30,6 +30,7 @@
     <string name="deconnexion">Déconnectez-vous</string>
     <string name="keyword">Mots-clés</string>
     <string name="checked">Enregistré aux mes évenements</string>
+    <string name="modifypass">Changer les mots de passe</string>
 
     <string-array name="menu_array">
         <item>Acceuil</item>

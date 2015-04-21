@@ -170,6 +170,26 @@ public class MainActivity extends ActionBarActivity {
     		// TODO: handle exception
     	}
     }
+    
+    public void changePassword(View view){
+    	Toast.makeText(this, 
+	  		      "Changer les mots de passe", 
+	  		      Toast.LENGTH_LONG).show();
+    }
+    
+    public void disconnect(View view){
+    	ConnexionFragment.connected=false;
+    	Fragment fragment = new AcceuilFragment();
+        Bundle args = new Bundle();
+        args.putInt(AcceuilFragment.ARG_FRAGMENT_NUMBER, 0);
+        fragment.setArguments(args);
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("acceuil").commit();
+    	Toast.makeText(this, 
+	  		      "Vous etes disconnecté(e)", 
+	  		      Toast.LENGTH_LONG).show();
+    }
 
 
     private void selectItem(int position) {
@@ -235,19 +255,11 @@ public class MainActivity extends ActionBarActivity {
 
 	    		break;
 	    	}
-	    	case 5:
+	    	case 5: case 6: // Aide, déconnexion, à propos
 	    	{
-	    		Fragment fragment = new ResultatsFragment();
-	            Bundle args = new Bundle();
-	            args.putInt(ResultatsFragment.ARG_FRAGMENT_NUMBER, 8);
-	            fragment.setArguments(args);
-	
-	            FragmentManager fragmentManager = getSupportFragmentManager();
-	            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("resultats").commit();
-	    		break;
-	    	}
-	    	case 6: case 7: // Aide, déconnexion, à propos
-	    	{
+	    		Toast.makeText(this, 
+	  	  		      "Pas implémenté!!!", 
+	  	  		      Toast.LENGTH_LONG).show();
 	    		break;
 	    	}
     	}

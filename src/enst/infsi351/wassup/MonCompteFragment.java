@@ -37,61 +37,6 @@ public class MonCompteFragment extends Fragment implements OnTabChangeListener{
 		return rootView;
     }
     
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.fragment_mon_compte);
-//     // enable ActionBar app icon to behave as action to toggle nav drawer
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setHomeButtonEnabled(true);
-//        
-//        myTabHost =(TabHost) findViewById(R.id.tabhost);
-//        myTabHost.setup();
-//        myTabHost.addTab(myTabHost.newTabSpec("Mes Amis").setIndicator("Mes Amis",getResources().getDrawable(android.R.drawable.ic_menu_edit)).setContent(R.id.onglet1));
-//        myTabHost.addTab(myTabHost.newTabSpec("Mes").setIndicator("A venir",getResources().getDrawable(android.R.drawable.ic_menu_edit)).setContent(R.id.onglet2));
-//        
-//        myTabHost.setOnTabChangedListener(this);
-//
-//    }
-//    
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.main, menu);
-//        return super.onCreateOptionsMenu(menu);
-//    }
-//    
-//    /* Called whenever we call invalidateOptionsMenu() */
-//    @Override
-//    public boolean onPrepareOptionsMenu(Menu menu) {
-//        // If the nav drawer is open, hide action items related to the content view
-//        return super.onPrepareOptionsMenu(menu);
-//    }
-//    
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle action buttons
-//        switch(item.getItemId()) {
-//        case R.id.action_search:
-//            /** TODO:
-//             * Add new activity for advanced search here!
-//             */
-//            return true;
-//        case android.R.id.home: {
-//            NavUtils.navigateUpFromSameTask(this);
-//            return true;
-//        }
-//        default:
-//            return super.onOptionsItemSelected(item);
-//        }
-//    }
-
-//    @Override
-//    public void onBackPressed() {
-//            super.onBackPressed();
-//        
-//    }
-    
 	@Override
 	public void onTabChanged(String tabId) {
 		Log.d(TAG, "onTabChanged(): tabId=" + tabId);

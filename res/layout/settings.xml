@@ -4,15 +4,27 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal" >
+    
+    <Button
+        android:id="@+id/btnModifyPass"
+        style="@style/GreenButton"
+        android:paddingRight="5dp"
+    	android:paddingLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/modifypass"
+        android:onClick="changePassword" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btnDisconnect"
         style="@style/BlueButton"
         android:paddingRight="5dp"
     	android:paddingLeft="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="@string/deconnexion" />
+        android:text="@string/deconnexion"
+        android:onClick="disconnect" />
 
 </LinearLayout>

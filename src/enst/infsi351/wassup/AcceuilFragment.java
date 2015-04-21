@@ -102,7 +102,7 @@ public class AcceuilFragment extends Fragment {
         	SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
             if (mapFragment != null){
             	map = mapFragment.getMap();
-            	//map.setMyLocationEnabled(true);
+            	map.setMyLocationEnabled(true);
             }
         } catch (InflateException e) {
             /* map is already there, just return view as it is */
@@ -141,8 +141,7 @@ public class AcceuilFragment extends Fragment {
 		super.onResume();
 		if (map == null){
 			map = ((SupportMapFragment)getChildFragmentManager().findFragmentById(R.id.map)).getMap();
-			Toast.makeText(getActivity(), "ok", Toast.LENGTH_SHORT).show();
-			//map.setMyLocationEnabled(true);
+			map.setMyLocationEnabled(true);
 		}
 		setupMap();
 	}

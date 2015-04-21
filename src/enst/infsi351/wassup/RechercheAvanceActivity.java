@@ -44,7 +44,7 @@ public class RechercheAvanceActivity extends ActionBarActivity {
         mPager.setAdapter(mPagerAdapter);
         
         
-      //Bind the title indicator to the adapter
+        //Bind the title indicator to the adapter
         final CirclePageIndicator circlePageIndicator = (CirclePageIndicator)findViewById(R.id.titles);
         circlePageIndicator.setFillColor(R.color.foursquare_blue);
         circlePageIndicator.setStrokeColor(R.color.gray);
@@ -54,12 +54,11 @@ public class RechercheAvanceActivity extends ActionBarActivity {
         circlePageIndicator.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
-                System.out.println("page"+position);
                 setTitleByStep(position);
             }
         });
         
-      //Style of the title
+        //Style of the title
         title = (TextView) findViewById(R.id.step_title);
         title.setTextColor(R.color.foursquare_blue);
         title.setVisibility(View.VISIBLE);
@@ -67,16 +66,13 @@ public class RechercheAvanceActivity extends ActionBarActivity {
         //set title of the first step
         setTitleByStep(0);
         
-      //Get Result of searching
+        //Get Result of searching
         final Button searchBtn = (Button) this.findViewById(R.id.SearchBtn);
         searchBtn.setVisibility(View.VISIBLE);
         searchBtn.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				//circlePageIndicator.setVisibility(View.GONE);
-				//searchBtn.setVisibility(View.GONE);
-				//title.setVisibility(View.GONE);
 	    		Fragment fragment = new ResultatsFragment();
 	            Bundle args = new Bundle();
 	            args.putInt(ResultatsFragment.ARG_FRAGMENT_NUMBER, 8);
@@ -110,12 +106,11 @@ public class RechercheAvanceActivity extends ActionBarActivity {
 
     @Override
     public void onBackPressed() {
-    	System.out.println("back"+mPager.getCurrentItem());
+    	
     	if (!returnBackStackImmediate(getSupportFragmentManager()))
 	        if (mPager.getCurrentItem() == 0) {
 	            // If the user is currently looking at the first step, allow the system to handle the
 	            // Back button. This calls finish() on this activity and pops the back stack.
-	        	System.out.println("nhan nut back");
 	            super.onBackPressed();
 	        } else {
 	            // Otherwise, select the previous step.

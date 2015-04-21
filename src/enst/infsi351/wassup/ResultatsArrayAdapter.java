@@ -1,5 +1,7 @@
 package enst.infsi351.wassup;
 
+import java.util.Random;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +26,7 @@ public class ResultatsArrayAdapter extends ArrayAdapter<Integer> {
 	static class ViewHolder {
 		ImageView imageView;
 		TextView titleText;
+		TextView infoText;
 		TextView descriptionText;
 		Button btnAccept;
 		TextView resultText;
@@ -51,6 +54,7 @@ public class ResultatsArrayAdapter extends ArrayAdapter<Integer> {
 			holder = new ViewHolder();
 			holder.titleText = (TextView) rowView.findViewById(R.id.firstLine);
 			holder.descriptionText = (TextView) rowView.findViewById(R.id.secondLine);
+			holder.infoText = (TextView) rowView.findViewById(R.id.textLine);
 			holder.resultText = (TextView) rowView.findViewById(R.id.textResult);
 			holder.imageView = (ImageView) rowView.findViewById(R.id.imageView);
 			holder.btnAccept = (Button) rowView.findViewById(R.id.btnAccept);
@@ -67,7 +71,13 @@ public class ResultatsArrayAdapter extends ArrayAdapter<Integer> {
 				
 			}
 		});
-		holder.titleText.setText(R.string.title);
+		holder.titleText.setText(R.string.title);		
+		Random r = new Random();
+		int i1 = r.nextInt(30) + 5;
+		if (prefix.contains("Prix"))
+			holder.infoText.setText("Date: 20/04/2015\nDistance: " + i1 + "km");
+		else
+			holder.infoText.setText("Date: 20/04/2015\nPrix: " + i1 + "E");
 		holder.descriptionText.setText(prefix + " " + Integer.toString(values[order[position]]) + " " + suffix);
 		holder.btnAccept.setTag(order[position]);
 		holder.btnAccept.setOnClickListener(new OnClickListener() {			

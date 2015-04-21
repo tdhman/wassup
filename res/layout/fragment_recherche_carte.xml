@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     android:id="@+id/content"
     android:layout_width="match_parent"
@@ -6,66 +6,75 @@
     android:focusableInTouchMode="true"
     android:orientation="vertical" >
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+	<LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginStart="5dp"
+	        android:layout_marginEnd="5dp"
+	        android:orientation="vertical">
+	        
+	    <LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content">
+	
+	        <TextView
+	            android:id="@+id/textView1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="start|center"
+	            android:text="@string/map_ville" />
+	
+	        <Spinner
+	            android:id="@+id/cityCombobox"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="end|center"
+	            android:layout_marginStart="10dp"
+	            android:layout_weight="1"
+	            android:entries="@array/city_arrays"
+	            android:gravity="start" />
+	
+	    </LinearLayout>
+	
+	   <LinearLayout
+	       android:layout_width="fill_parent"
+	       android:layout_height="300dp"
+	       android:layout_marginBottom="10dp"
+	       android:layout_marginTop="10dp"
+	       android:background="@drawable/border"
+	       android:orientation="vertical" >
+	        
+		   <fragment
+		        android:id="@+id/map"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:name="com.google.android.gms.maps.MapFragment"/>
+	
+	    </LinearLayout>
+	
+	    <LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content" >
+	
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/near_you" />
+	
+	        <SeekBar
+	            android:id="@+id/nearMeTxt"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:max="50">
+	            <requestFocus/>
+	        </SeekBar>
+	
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/unit_map" />
+	    </LinearLayout>
+	</LinearLayout>
 
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start|center"
-            android:text="@string/map_ville" />
-
-        <Spinner
-            android:id="@+id/cityCombobox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|center"
-            android:layout_marginStart="10dp"
-            android:layout_weight="1"
-            android:entries="@array/city_arrays"
-            android:gravity="start" />
-
-    </LinearLayout>
-
-   <LinearLayout
-       android:layout_width="fill_parent"
-       android:layout_height="300dp"
-       android:layout_marginBottom="10dp"
-       android:layout_marginTop="10dp"
-       android:background="@drawable/border"
-       android:orientation="vertical" >
-	   <fragment
-	        android:id="@+id/map"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
-	        android:name="com.google.android.gms.maps.MapFragment"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/near_you" />
-
-        <SeekBar
-            android:id="@+id/nearMeTxt"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:max="50">
-            <requestFocus/>
-        </SeekBar>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/unit_map" />
-    </LinearLayout>
-
-</LinearLayout>
+</FrameLayout>
